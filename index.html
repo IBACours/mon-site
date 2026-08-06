@@ -2,93 +2,97 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>- IBA Cours -</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBA Cours - Sandrine Ibaremborde</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
             background-color: #f7f7f7;
         }
-        h2, h3 {
-            color: #2c3e50;
-        }
-        .bloc {
-            background: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-        }
-        .centre {
+
+        /* En-tête */
+        .header {
             text-align: center;
+            padding: 40px 20px;
         }
-        .contact {
-            font-size: 1.1em;
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-weight: normal;
+            margin-top: -10px;
+        }
+
+        /* Contenu */
+        .content {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* Photo + nom en bas */
+        .footer-photo {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-photo img {
+            width: 120px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .footer-photo h3 {
+            margin: 0;
         }
     </style>
 </head>
+
 <body>
-<h1 style="text-align: center; font-size: 3em; margin-top: 40px;">
-  IBA Cours
-</h1>
 
-<h2 style="text-align: center; font-weight: normal; margin-top: -10px;">
-  Votre réussite, notre objectif !
-</h2>
+    <!-- En-tête -->
+    <div class="header">
+        <h1>IBA Cours</h1>
+        <h2>Votre réussite, notre objectif !</h2>
+    </div>
 
-<div class="bloc">
-    <h2>" Votre réussite, notre objectif ! "</h2>
+    <!-- Contenu principal -->
+    <div class="content">
+        <h2>Bienvenue sur IBA Cours</h2>
+        <p>Découvrez nos services d'accompagnement scolaire personnalisés.</p>
 
-    <p>
-        👩‍🏫 Enseignante et formatrice diplômée, je propose un soutien scolaire personnalisé
-        en <strong>mathématiques</strong> et <strong>français</strong> pour des élèves de primaire et collège,
-        ainsi que pour les adultes souhaitant renforcer leurs compétences et préparer des concours.
-    </p>
+        <img src="cours.jpg" alt="Cours particuliers">
 
-    <p>
-        ✅ <strong>Pédagogie adaptée :</strong> chaque élève est unique.  
-        Je m’adapte à son rythme, ses besoins et ses difficultés pour des progrès durables.
-    </p>
+        <h3>Nos services</h3>
+        <ul>
+            <li>Cours particuliers à domicile</li>
+            <li>Aide aux devoirs</li>
+            <li>Préparation aux examens</li>
+            <li>Suivi personnalisé</li>
+        </ul>
 
-    <p>
-        ✅ <strong>Suivi personnalisé :</strong> un accompagnement sur mesure, avec des méthodes variées
-        (exercices ciblés, explications claires, astuces mnémotechniques) pour dédramatiser l’apprentissage
-        et redonner confiance.
-    </p>
+        <h3>Contact</h3>
+        <p>Email : sandrine.ibaremborde@example.com</p>
+        <p>Téléphone : 06 00 00 00 00</p>
+    </div>
 
-    <p>
-        ✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant,
-        pour un apprentissage serein et efficace.
-    </p>
-</div>
-
-<div class="bloc">
-    <h3>🎁 Avantages</h3>
-
-    <p>
-        ✔ <strong>50% de crédit d’impôt</strong> (selon la législation en vigueur).<br>
-        ✔ <strong>Disponibilité :</strong> adaptée à vos contraintes horaires.
-    </p>
-</div>
-
-<div class="bloc">
-    <h3> Contact : </h3>
-
-    <p class="contact">
-        📧 <strong>iba.cours@gmail.com</strong><br>
-        📞 <strong>06 12 27 29 95</strong>
-    </p>
-</div>
-
-<div class="bloc centre">
-    <img src="Sandrine.jpg" alt="Photo Sandrine" style="width:180px; border-radius:10px;"><br><br>
-    <p><strong>Sandrine IBAREMBORDE – IBA Cours</strong></p>
-    <em>" Parce que la réussite se construit avec patience, écoute et passion. "</em>
-</div>
+    <!-- Photo + nom en bas -->
+    <div class="footer-photo">
+        <img src="sandrine.jpg" alt="Sandrine Ibaremborde">
+        <h3>Sandrine Ibaremborde</h3>
+    </div>
 
 </body>
 </html>
-
