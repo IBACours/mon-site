@@ -16,8 +16,19 @@
 
 <style>
   .intro-logo {
-  width: 180px;        /* Taille contrôlée */
-  max-width: 30%;      /* Empêche de dépasser */
+  width: 180px;
+  height: auto;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInLogo 1s ease-out 1s forwards;
+
+  /* Effet pour supprimer le fond blanc */
+  mix-blend-mode: multiply;
+}
+
+  .intro-logo {
+  width: 220px;        /* Taille contrôlée */
+  max-width: 40%;      /* Empêche de dépasser */
   height: auto;        /* Garde les proportions */
   margin-top: 20px;
   opacity: 0;
