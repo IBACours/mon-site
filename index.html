@@ -2,8 +2,20 @@
 <div id="intro">
   <h1 class="intro-title">IBA COURS</h1>
   <p class="intro-subtitle">Ta réussite, notre objectif !</p>
-  <p class="intro-subtitle">Organisme déclaré !</p>
- .intro-logo {
+<<p class="intro-subtitle">Organisme déclaré</p>
+  <!-- Logo SAP dans la page d'intro -->
+  <img src="service-a-la-personne.png"
+       alt="Service à la Personne"
+       class="intro-logo">
+</div>
+
+}
+
+
+</div>
+
+<style>
+  .intro-logo {
   width: 120px;        /* Taille contrôlée */
   max-width: 30%;      /* Empêche de dépasser */
   height: auto;        /* Garde les proportions */
@@ -12,10 +24,11 @@
   animation: fadeInLogo 1s ease-out 1s forwards;
 }
 
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-</div>
-
-<style>
   #intro {
     position: fixed;
     top: 0; left: 0;
