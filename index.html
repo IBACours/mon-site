@@ -1,3 +1,51 @@
+<!-- PAGE D'INTRO -->
+<div id="intro">
+  <h1 class="intro-title">IBA COURS</h1>
+  <p class="intro-subtitle">Ta réussite, notre objectif !</p>
+</div>
+
+<style>
+  #intro {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1s ease-in-out 3s forwards;
+  }
+
+  .intro-title {
+    font-size: 48px;
+    font-weight: bold;
+    animation: slideDown 1s ease-out;
+  }
+
+  .intro-subtitle {
+    font-size: 24px;
+    margin-top: 10px;
+    animation: slideUp 1s ease-out 0.5s;
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+</style>
+
+
 <!DOCTYPE html>
 <!-- Version 3.1 - mise à jour du cache -->
 
@@ -91,7 +139,19 @@
 
      <h3>🎁 Avantages</h3>
 <ul>
-  <li>✓ Organisme déclaré "Services à la Personne".</li>
+ <p>
+  <span id="sap-text" style="transition: opacity 0.8s;">
+    Organisme déclaré "Services à la Personne"
+  </span>
+
+  <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
+    <img id="sap-logo"
+         src="service-a-la-personne.png"
+         alt="Service à la Personne"
+         style="width: 75px; vertical-align: middle; margin-left: 8px; opacity: 0; display: none; transition: opacity 0.8s;">
+  </a>
+</p>
+
 
   <p>
     50% de crédit d’impôt
@@ -160,6 +220,24 @@
 
     <!-- Photo en bas -->
     
+<script>
+  window.addEventListener("load", function() {
+    setTimeout(() => {
+      const sapText = document.getElementById("sap-text");
+      const sapLogo = document.getElementById("sap-logo");
+
+      if (sapText && sapLogo) {
+        sapText.style.opacity = 0;
+
+        setTimeout(() => {
+          sapText.style.display = "none";
+          sapLogo.style.display = "inline-block";
+          sapLogo.style.opacity = 1;
+        }, 800);
+      }
+    }, 3500); // après disparition de la page d'intro
+  });
+</script>
 
 </body>
 </html>
