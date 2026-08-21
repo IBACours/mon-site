@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Déposer un avis</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: auto; padding: 20px; }
+        form { margin-top: 20px; }
+        label { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>Déposer un avis</h1>
+
+<p>Merci de prendre un moment pour partager votre avis.</p>
+
+<form action="https://formspree.io/f/TON_CODE_ICI" method="POST">
+    <label>Votre nom :</label><br>
+    <input type="text" name="nom" required><br><br>
+
+    <label>Votre avis :</label><br>
+    <textarea name="avis" required></textarea><br><br>
+
+    <button type="submit">Envoyer</button>
+</form>
+
+<p>Votre avis sera examiné avant publication.</p>
+
+</body>
+</html>
