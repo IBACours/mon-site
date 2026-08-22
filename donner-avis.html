@@ -15,10 +15,7 @@
 
 <p>Merci de prendre un moment pour partager votre avis.</p>
 
-<form action="https://formspree.io/f/xqpzjqjj" method="POST">
-
-    <!-- Redirection automatique compatible avec Formspree GRATUIT -->
-    <input type="hidden" name="_next" value="https://ibacours.github.io/mon-site/confirmation.html">
+<form id="avisForm" action="https://formspree.io/f/xqpzjqjj" method="POST" target="formspreeFrame">
 
     <label>Votre nom :</label><br>
     <input type="text" name="nom" required><br><br>
@@ -28,6 +25,16 @@
 
     <button type="submit">Envoyer</button>
 </form>
+
+<!-- Iframe invisible qui reçoit la réponse Formspree -->
+<iframe name="formspreeFrame" style="display:none;"></iframe>
+
+<script>
+document.getElementById("avisForm").addEventListener("submit", function() {
+    // Redirection immédiate vers ta page de confirmation
+    window.location.href = "confirmation.html";
+});
+</script>
 
 <p>Votre avis sera examiné avant publication.</p>
 
