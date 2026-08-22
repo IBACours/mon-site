@@ -9,7 +9,7 @@
         textarea, input { width: 100%; }
         button { padding: 10px 20px; margin-top: 20px; }
 
-        /* ⭐ Système d'étoiles blanc → or */
+        /* ⭐ Étoiles blanches → dorées */
         .stars {
             display: flex;
             flex-direction: row-reverse; /* IMPORTANT */
@@ -22,22 +22,23 @@
             display: none;
         }
 
+        /* ⭐ Étoiles blanches au départ */
         .stars label {
+            color: #ddd !important; /* force gris/blanc */
             cursor: pointer;
-            color: #ddd; /* ⭐ étoiles blanches/grises */
             transition: transform 0.2s, color 0.2s;
         }
 
-        /* Survol : étoiles dorées */
+        /* ⭐ Survol : étoiles dorées */
         .stars label:hover,
         .stars label:hover ~ label {
-            color: gold;
+            color: gold !important;
             transform: scale(1.2);
         }
 
-        /* Clic : étoiles dorées */
+        /* ⭐ Clic : étoiles dorées */
         .stars input:checked ~ label {
-            color: gold;
+            color: gold !important;
         }
     </style>
 </head>
