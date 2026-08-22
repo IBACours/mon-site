@@ -36,11 +36,17 @@ function envoyerAvis(e) {
     const sujet = encodeURIComponent("Nouvel avis client");
     const corps = encodeURIComponent("Nom : " + nom + "\n\nAvis :\n" + avis);
 
-    window.location.href = "mailto:x-bonnet@laposte.net?subject=" + sujet + "&body=" + corps;
+    // Ouvre l'application email du client
+    window.location.href = "mailto:TON_EMAIL?subject=" + sujet + "&body=" + corps;
+
+    // Redirection automatique vers la page de confirmation
+    setTimeout(() => {
+        window.location.href = "confirmation.html";
+    }, 500);
 }
 </script>
 
+<p>Votre avis sera examiné avant publication.</p>
+
 </body>
 </html>
-
-
