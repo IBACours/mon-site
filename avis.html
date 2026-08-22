@@ -42,7 +42,7 @@
         }
 
         .note-texte {
-            display: none; /* caché, mais lu par le script */
+            display: none;
         }
 
         .stars-display {
@@ -62,12 +62,21 @@
             color: #444;
         }
 
-        a.retour {
+        .btn-retour {
             display: inline-block;
             margin-top: 30px;
+            padding: 12px 20px;
+            background: #2c3e50;
+            color: white;
             text-decoration: none;
-            color: #0066cc;
+            border-radius: 8px;
             font-size: 1.1em;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-retour:hover {
+            background: #1a252f;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -79,7 +88,6 @@
 
 <div class="avis-list">
 
-    <!-- ⭐ Exemple avis 1 -->
     <div class="avis">
         <div class="nom">Jean Dupont</div>
         <span class="note-texte">4</span>
@@ -89,7 +97,6 @@
         </div>
     </div>
 
-    <!-- ⭐ Exemple avis 2 -->
     <div class="avis">
         <div class="nom">Marie L.</div>
         <span class="note-texte">5</span>
@@ -99,7 +106,6 @@
         </div>
     </div>
 
-    <!-- ⭐ Exemple avis 3 -->
     <div class="avis">
         <div class="nom">Paul R.</div>
         <span class="note-texte">3</span>
@@ -111,14 +117,9 @@
 
 </div>
 
-<a href="donner-avis.html" class="retour">Déposer un avis</a>
+<a href="index.html" class="btn-retour">⬅ Retour au site</a>
 
 <script>
-/**
- * Génère automatiquement les étoiles en fonction de la note (1 à 5)
- * La note est lue dans .note-texte
- * Les étoiles sont dessinées dans .stars-display
- */
 document.addEventListener('DOMContentLoaded', () => {
     const avisElements = document.querySelectorAll('.avis');
 
