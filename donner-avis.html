@@ -8,6 +8,33 @@
         label { font-weight: bold; }
         textarea, input { width: 100%; }
         button { padding: 10px 20px; margin-top: 20px; }
+
+        /* ⭐ Style des étoiles */
+        .stars {
+            display: flex;
+            gap: 10px;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            cursor: pointer;
+            color: #ccc;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .stars label:hover {
+            transform: scale(1.3);
+            color: gold;
+        }
+
+        .stars input:checked + label {
+            color: gold;
+        }
     </style>
 </head>
 <body>
@@ -17,9 +44,34 @@
 <p>Merci de prendre un moment pour partager votre avis.</p>
 
 <form onsubmit="envoyerAvis(event)">
+    
+    <!-- Champ nom + prénom -->
     <label for="fullname">Votre nom et prénom :</label><br>
     <input type="text" id="fullname" required><br><br>
 
+    <!-- ⭐ Bloc étoiles -->
+    <label>Votre note :</label><br>
+
+    <div class="stars">
+        <input type="radio" id="star5" name="note" value="5" required>
+        <label for="star5">⭐</label>
+
+        <input type="radio" id="star4" name="note" value="4">
+        <label for="star4">⭐</label>
+
+        <input type="radio" id="star3" name="note" value="3">
+        <label for="star3">⭐</label>
+
+        <input type="radio" id="star2" name="note" value="2">
+        <label for="star2">⭐</label>
+
+        <input type="radio" id="star1" name="note" value="1">
+        <label for="star1">⭐</label>
+    </div>
+
+    <br><br>
+
+    <!-- Champ avis -->
     <label for="avis">Votre avis :</label><br>
     <textarea id="avis" required></textarea><br><br>
 
@@ -32,9 +84,15 @@ function envoyerAvis(e) {
 
     const nom = document.getElementById('fullname').value;
     const avis = document.getElementById('avis').value;
+    const note = document.querySelector('input[name="note"]:checked').value;
 
     const sujet = encodeURIComponent("Nouvel avis client");
-    const corps = encodeURIComponent("Nom et prénom : " + nom + "\n\nAvis :\n" + avis);
+
+    const corps = encodeURIComponent(
+        "Nom et prénom : " + nom +
+        "\nNote : " + note + " étoiles" +
+        "\n\nAvis :\n" + avis
+    );
 
     // Ouvre l'application email
     window.location.href = "mailto:avis.ibacours@gmail.com?subject=" + sujet + "&body=" + corps;
