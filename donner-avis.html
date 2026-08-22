@@ -17,10 +17,10 @@
 <p>Merci de prendre un moment pour partager votre avis.</p>
 
 <form onsubmit="envoyerAvis(event)">
-    <label>Votre nom prénom :</label><br>
-    <input type="text" id="nom prénom" required><br><br>
+    <label for="fullname">Votre nom et prénom :</label><br>
+    <input type="text" id="fullname" required><br><br>
 
-    <label>Votre avis :</label><br>
+    <label for="avis">Votre avis :</label><br>
     <textarea id="avis" required></textarea><br><br>
 
     <button type="submit">Envoyer</button>
@@ -30,11 +30,11 @@
 function envoyerAvis(e) {
     e.preventDefault();
 
-    const nom = document.getElementById('nom').value;
+    const nom = document.getElementById('fullname').value;
     const avis = document.getElementById('avis').value;
 
     const sujet = encodeURIComponent("Nouvel avis client");
-    const corps = encodeURIComponent("Nom : " + nom + "\n\nAvis :\n" + avis);
+    const corps = encodeURIComponent("Nom et prénom : " + nom + "\n\nAvis :\n" + avis);
 
     // Ouvre l'application email
     window.location.href = "mailto:avis.ibacours@gmail.com?subject=" + sujet + "&body=" + corps;
@@ -42,7 +42,7 @@ function envoyerAvis(e) {
     // Redirection après un délai suffisant
     setTimeout(() => {
         window.location.href = "confirmation.html";
-    }, 1500); // 1,5 seconde
+    }, 1500);
 }
 </script>
 
