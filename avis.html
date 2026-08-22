@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Avis des clients</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,53 +16,50 @@
         h1 {
             text-align: center;
             margin-bottom: 30px;
+            font-size: 32px;
+            color: #333;
         }
 
         .avis-list {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .avis {
             background: #ffffff;
-            border-radius: 10px;
-            padding: 15px 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 6px solid #2c3e50;
         }
 
         .nom {
             font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-
-        .meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 0.9em;
-            color: #666;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            color: #2c3e50;
         }
 
         .note-texte {
-            /* là où tu écris juste la note (1 à 5) */
+            display: none; /* caché, mais lu par le script */
         }
 
         .stars-display {
             display: flex;
-            gap: 4px;
+            gap: 6px;
+            margin-bottom: 10px;
         }
 
         .stars-display svg {
-            width: 20px;
-            height: 20px;
+            width: 26px;
+            height: 26px;
         }
 
         .texte {
-            margin-top: 5px;
-            line-height: 1.4;
+            font-size: 1.05em;
+            line-height: 1.5;
+            color: #444;
         }
 
         a.retour {
@@ -69,6 +67,7 @@
             margin-top: 30px;
             text-decoration: none;
             color: #0066cc;
+            font-size: 1.1em;
         }
     </style>
 </head>
@@ -80,40 +79,30 @@
 
 <div class="avis-list">
 
-    <!-- 🟦 Exemple avis 1 -->
+    <!-- ⭐ Exemple avis 1 -->
     <div class="avis">
         <div class="nom">Jean Dupont</div>
-        <div class="meta">
-            <span>Type de cours : Maths</span>
-            <!-- Tu écris juste la note ici -->
-            <span class="note-texte">4</span>
-        </div>
+        <span class="note-texte">4</span>
         <div class="stars-display"></div>
         <div class="texte">
             Très bon accompagnement, beaucoup de patience et une vraie progression. Merci !
         </div>
     </div>
 
-    <!-- 🟦 Exemple avis 2 -->
+    <!-- ⭐ Exemple avis 2 -->
     <div class="avis">
         <div class="nom">Marie L.</div>
-        <div class="meta">
-            <span>Type de cours : Français</span>
-            <span class="note-texte">5</span>
-        </div>
+        <span class="note-texte">5</span>
         <div class="stars-display"></div>
         <div class="texte">
             Sandrine est très professionnelle et à l’écoute. Je recommande vivement.
         </div>
     </div>
 
-    <!-- 🟦 Exemple avis 3 -->
+    <!-- ⭐ Exemple avis 3 -->
     <div class="avis">
         <div class="nom">Paul R.</div>
-        <div class="meta">
-            <span>Type de cours : Aide aux devoirs</span>
-            <span class="note-texte">3</span>
-        </div>
+        <span class="note-texte">3</span>
         <div class="stars-display"></div>
         <div class="texte">
             Bonne expérience, mon enfant a repris confiance, merci pour votre soutien.
@@ -127,7 +116,7 @@
 <script>
 /**
  * Génère automatiquement les étoiles en fonction de la note (1 à 5)
- * La note est lue dans .note-texte (texte "4", "5", etc.)
+ * La note est lue dans .note-texte
  * Les étoiles sont dessinées dans .stars-display
  */
 document.addEventListener('DOMContentLoaded', () => {
@@ -142,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const note = parseInt(noteElement.textContent.trim(), 10);
         const maxStars = 5;
 
-        // Nettoyer le conteneur au cas où
         starsContainer.innerHTML = '';
 
         for (let i = 1; i <= maxStars; i++) {
@@ -152,12 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
             polygon.setAttribute('points', '12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9');
 
-            // Si i <= note → étoile dorée, sinon grise
-            if (i <= note) {
-                polygon.setAttribute('fill', 'gold');
-            } else {
-                polygon.setAttribute('fill', '#ddd');
-            }
+            polygon.setAttribute('fill', i <= note ? 'gold' : '#ddd');
 
             svg.appendChild(polygon);
             starsContainer.appendChild(svg);
