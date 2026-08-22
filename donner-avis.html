@@ -5,8 +5,9 @@
     <title>Déposer un avis</title>
     <style>
         body { font-family: Arial; max-width: 800px; margin: auto; padding: 20px; }
-        form { margin-top: 20px; }
         label { font-weight: bold; }
+        textarea, input { width: 100%; }
+        button { padding: 10px 20px; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -15,28 +16,31 @@
 
 <p>Merci de prendre un moment pour partager votre avis.</p>
 
-<form id="avisForm" action="https://formspree.io/f/xqpzjqjj" method="POST" target="formspreeFrame">
-
+<form onsubmit="envoyerAvis(event)">
     <label>Votre nom :</label><br>
-    <input type="text" name="nom" required><br><br>
+    <input type="text" id="nom" required><br><br>
 
     <label>Votre avis :</label><br>
-    <textarea name="avis" required></textarea><br><br>
+    <textarea id="avis" required></textarea><br><br>
 
     <button type="submit">Envoyer</button>
 </form>
 
-<!-- Iframe invisible qui reçoit la réponse Formspree -->
-<iframe name="formspreeFrame" style="display:none;"></iframe>
-
 <script>
-document.getElementById("avisForm").addEventListener("submit", function() {
-    // Redirection immédiate vers ta page de confirmation
-    window.location.href = "confirmation.html";
-});
-</script>
+function envoyerAvis(e) {
+    e.preventDefault();
 
-<p>Votre avis sera examiné avant publication.</p>
+    const nom = document.getElementById('nom').value;
+    const avis = document.getElementById('avis').value;
+
+    const sujet = encodeURIComponent("Nouvel avis client");
+    const corps = encodeURIComponent("Nom : " + nom + "\n\nAvis :\n" + avis);
+
+    window.location.href = "mailto:x-bonnet@laposte.net?subject=" + sujet + "&body=" + corps;
+}
+</script>
 
 </body>
 </html>
+
+
