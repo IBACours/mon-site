@@ -36,13 +36,13 @@ function envoyerAvis(e) {
     const sujet = encodeURIComponent("Nouvel avis client");
     const corps = encodeURIComponent("Nom : " + nom + "\n\nAvis :\n" + avis);
 
-    // Ouvre l'application email du client
+    // Ouvre l'application email
     window.location.href = "mailto:TON_EMAIL?subject=" + sujet + "&body=" + corps;
 
-    // Redirection automatique vers la page de confirmation
+    // Redirection après un délai suffisant
     setTimeout(() => {
         window.location.href = "confirmation.html";
-    }, 500);
+    }, 1500); // 1,5 seconde
 }
 </script>
 
