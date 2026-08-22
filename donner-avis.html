@@ -9,10 +9,10 @@
         textarea, input { width: 100%; }
         button { padding: 10px 20px; margin-top: 20px; }
 
-        /* ⭐ Étoiles blanches → dorées */
+        /* ⭐ Système d'étoiles blanc → or */
         .stars {
             display: flex;
-            flex-direction: row-reverse; /* IMPORTANT */
+            flex-direction: row-reverse;
             gap: 10px;
             font-size: 40px;
             cursor: pointer;
@@ -22,23 +22,27 @@
             display: none;
         }
 
-        /* ⭐ Étoiles blanches au départ */
+        /* ⭐ Étoiles blanches au départ (thème-proof) */
         .stars label {
-            color: #ddd !important; /* force gris/blanc */
+            color: transparent !important; /* on masque la couleur du thème */
+            text-shadow: 0 0 0 #ddd !important; /* étoiles grises/blanches */
+            filter: grayscale(100%) brightness(1.5); /* force gris */
             cursor: pointer;
-            transition: transform 0.2s, color 0.2s;
+            transition: transform 0.2s, filter 0.2s, text-shadow 0.2s;
         }
 
         /* ⭐ Survol : étoiles dorées */
         .stars label:hover,
         .stars label:hover ~ label {
-            color: gold !important;
+            text-shadow: 0 0 0 gold !important;
+            filter: none !important;
             transform: scale(1.2);
         }
 
         /* ⭐ Clic : étoiles dorées */
         .stars input:checked ~ label {
-            color: gold !important;
+            text-shadow: 0 0 0 gold !important;
+            filter: none !important;
         }
     </style>
 </head>
