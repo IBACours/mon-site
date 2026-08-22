@@ -9,11 +9,12 @@
         textarea, input { width: 100%; }
         button { padding: 10px 20px; margin-top: 20px; }
 
-        /* ⭐ Style des étoiles */
+        /* ⭐ Système d'étoiles blanc → or */
         .stars {
             display: flex;
+            flex-direction: row-reverse; /* IMPORTANT */
             gap: 10px;
-            font-size: 35px;
+            font-size: 40px;
             cursor: pointer;
         }
 
@@ -23,16 +24,19 @@
 
         .stars label {
             cursor: pointer;
-            color: #ccc;
+            color: #ddd; /* ⭐ étoiles blanches/grises */
             transition: transform 0.2s, color 0.2s;
         }
 
-        .stars label:hover {
-            transform: scale(1.3);
+        /* Survol : étoiles dorées */
+        .stars label:hover,
+        .stars label:hover ~ label {
             color: gold;
+            transform: scale(1.2);
         }
 
-        .stars input:checked + label {
+        /* Clic : étoiles dorées */
+        .stars input:checked ~ label {
             color: gold;
         }
     </style>
@@ -45,7 +49,6 @@
 
 <form onsubmit="envoyerAvis(event)">
     
-    <!-- Champ nom + prénom -->
     <label for="fullname">Votre nom et prénom :</label><br>
     <input type="text" id="fullname" required><br><br>
 
@@ -71,7 +74,6 @@
 
     <br><br>
 
-    <!-- Champ avis -->
     <label for="avis">Votre avis :</label><br>
     <textarea id="avis" required></textarea><br><br>
 
@@ -94,10 +96,8 @@ function envoyerAvis(e) {
         "\n\nAvis :\n" + avis
     );
 
-    // Ouvre l'application email
     window.location.href = "mailto:avis.ibacours@gmail.com?subject=" + sujet + "&body=" + corps;
 
-    // Redirection après un délai suffisant
     setTimeout(() => {
         window.location.href = "confirmation.html";
     }, 1500);
