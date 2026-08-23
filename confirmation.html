@@ -89,26 +89,32 @@
 
 <p>Cliquez ci-dessous pour l’envoyer par email.</p>
 
-<a class="mail-btn"
-   href="mailto:avis.ibacours@gmail.com?subject=Nouvel%20avis%20client"
-   onclick="setTimeout(() => { window.location.href='index.html'; }, 800);">
-   Envoyer l’avis par email
-</a>
-
+<a id="mailBtn" class="mail-btn">Envoyer l’avis par email</a>
 
 <script>
 window.onload = function() {
-    // Récupération du texte envoyé depuis donner-avis.html
+
     const params = new URLSearchParams(window.location.search);
     const texte = params.get("texte");
 
-    // Construction du mail complet
+    if (!texte) {
+        alert("Aucun avis reçu. Retour au site.");
+        window.location.href = "index.html";
+        return;
+    }
+
     const mailto = "mailto:avis.ibacours@gmail.com"
                  + "?subject=Nouvel%20avis%20client"
                  + "&body=" + texte;
 
-    // On met le lien dans le bouton
-    document.getElementById("mailBtn").href = mailto;
+    const btn = document.getElementById("mailBtn");
+    btn.href = mailto;
+
+    btn.onclick = function() {
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 800);
+    };
 };
 </script>
 
