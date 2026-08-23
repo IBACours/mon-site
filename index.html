@@ -155,18 +155,15 @@
 
         <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant, pour un apprentissage serein et efficace.</p>
 
-        <h3>🎁 Avantages</h3>
-      <ul>
-            <li>✓ Disponibilité : adaptée à vos contraintes horaires.</li>
-        </ul>
-        
-       <!-- Bloc Services à la Personne – Version Responsive -->
+<h3>🎁 Avantages</h3>
+
+<!-- Bloc Services à la Personne – Version Responsive -->
 <div class="sap-box">
   <div class="sap-text">
     <ul>
-      <li>✓ <strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
+      <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
       <li>
-        ✓ <strong>Organisme déclaré "Services à la Personne"</strong><br>
+        <strong>Organisme déclaré "Services à la Personne"</strong><br>
         Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
         Pour plus d'information 
         <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
@@ -190,15 +187,22 @@
     max-width: 900px;
     margin: 20px auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* corrige le décalage vertical */
     gap: 20px;
   }
 
   .sap-text ul {
     margin: 0;
-    padding-left: 20px;
+    padding-left: 25px; /* alignement parfait */
     font-size: 1.1em;
     line-height: 1.6em;
+    list-style-type: none; /* supprime les points noirs */
+  }
+
+  .sap-text li::before {
+    content: "✓ ";
+    color: #2c3e50;
+    font-weight: bold;
   }
 
   .sap-text a {
@@ -220,6 +224,7 @@
     .sap-box {
       flex-direction: column;
       text-align: center;
+      align-items: center;
     }
 
     .sap-text ul {
@@ -234,61 +239,6 @@
   }
 </style>
 
-  /* Bloc général */
-  .sap-box {
-    background-color: #f8f6ef;
-    border: 1px solid #000;
-    border-radius: 6px;
-    padding: 15px;
-    max-width: 900px;
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  /* Texte */
-  .sap-text ul {
-    margin: 0;
-    padding-left: 20px;
-    font-size: 1.1em;
-    line-height: 1.6em;
-  }
-
-  .sap-text a {
-    color: #2c3e50;
-    text-decoration: underline;
-    font-weight: bold;
-  }
-
-  /* Logo */
-  .sap-logo-container {
-    flex-shrink: 0;
-  }
-
-  .sap-logo {
-    height: 80px;
-    width: auto;
-  }
-
-  /* Responsive : téléphone */
-  @media (max-width: 700px) {
-    .sap-box {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .sap-text ul {
-      padding-left: 0;
-      list-style-position: inside;
-    }
-
-    .sap-logo {
-      height: 70px;
-      margin-top: 10px;
-    }
-  }
-</style>
 
 
         
