@@ -9,11 +9,10 @@
             font-family: Arial, sans-serif;
             max-width: 900px;
             margin: auto;
-            padding-top: 70px; /* espace sous le bandeau fixe */
+            padding-top: 70px;
             background: #f5f5f7;
         }
 
-        /* ⭐ Bandeau fixe identique à avis.html */
         .top-bar {
             position: fixed;
             top: 0;
@@ -46,16 +45,13 @@
             text-decoration: none;
             border-radius: 6px;
             font-size: 0.95em;
-            transition: background 0.2s, transform 0.2s;
         }
 
         .btn:hover {
             background: #1a252f;
-            transform: scale(1.05);
         }
 
-        /* ⭐ Formulaire propre */
-        form {
+        .form-box {
             background: #ffffff;
             padding: 25px;
             border-radius: 12px;
@@ -78,7 +74,7 @@
             font-size: 1em;
         }
 
-        button {
+        .send-btn {
             padding: 12px 20px;
             background: #2c3e50;
             color: white;
@@ -86,33 +82,28 @@
             border-radius: 8px;
             font-size: 1.1em;
             cursor: pointer;
+            width: 100%;
         }
 
-        button:hover {
+        .send-btn:hover {
             background: #1a252f;
         }
     </style>
 </head>
 <body>
 
-<!-- ⭐ Bandeau fixe -->
 <div class="top-bar">
     <a href="index.html" class="btn">⬅ Retour au site</a>
-
     <div class="top-title">Déposer un avis</div>
-
     <a href="avis.html" class="btn">Voir les avis ➤</a>
 </div>
 
-<!-- ⭐ Formulaire -->
-<form action="mailto:avis.ibacours@gmail.com?subject=Nouvel%20avis%20client" method="POST" enctype="text/plain">
-
-
+<div class="form-box">
     <label>Votre nom et prénom :</label>
-    <input type="text" name="nom" required>
+    <input type="text" id="nom">
 
     <label>Votre note :</label>
-    <select name="note" required>
+    <select id="note">
         <option value="5">⭐⭐⭐⭐⭐ — 5</option>
         <option value="4">⭐⭐⭐⭐ — 4</option>
         <option value="3">⭐⭐⭐ — 3</option>
@@ -121,18 +112,12 @@
     </select>
 
     <label>Votre avis :</label>
-    <textarea name="avis" rows="5" required></textarea>
+    <textarea id="avis" rows="5"></textarea>
 
-   <button type="button" onclick="window.location.href='confirmation.html';">
-    Envoyer
-</button>
-
-
-</form>
-
-<p style="margin-top: 10px; color: #555;">
-    Votre avis sera examiné avant publication.
-</p>
+    <button class="send-btn" onclick="window.location.href='confirmation.html';">
+        Envoyer
+    </button>
+</div>
 
 </body>
 </html>
