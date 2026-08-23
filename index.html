@@ -176,16 +176,14 @@
         <!-- Ligne 1 -->
         Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
 
-        <!-- ✔ Logo entre les deux lignes, aligné à droite -->
-        <div class="sap-logo-between-right">
-          <img src="service-a-la-personne.png" alt="Service à la Personne">
-        </div>
-
         <!-- Ligne 2 -->
         Pour plus d'information 
         <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
           cliquez ici
-        </a>
+        </a><br>
+
+        <!-- ✔ Logo juste après les deux phrases -->
+        <img src="service-a-la-personne.png" alt="Service à la Personne" class="sap-logo-after-text">
       </li>
 
       <li>
@@ -230,15 +228,12 @@
     font-weight: bold;
   }
 
-  /* ✔ Logo entre les deux lignes, aligné à droite */
-  .sap-logo-between-right {
-    text-align: right;      /* Aligné à droite */
-    margin: 6px 0;          /* Espacement harmonieux */
-  }
-
-  .sap-logo-between-right img {
-    height: 55px;           /* Taille idéale */
+  /* ✔ Logo juste après les deux phrases */
+  .sap-logo-after-text {
+    height: 55px;
     width: auto;
+    margin-top: 6px;   /* Petit espace pour respirer */
+    display: block;    /* Le logo reste sur sa propre ligne */
   }
 
   @media (max-width: 700px) {
@@ -247,11 +242,7 @@
       list-style-position: inside;
     }
 
-    .sap-logo-between-right {
-      text-align: center;   /* Sur mobile, centré pour un meilleur rendu */
-    }
-
-    .sap-logo-between-right img {
+    .sap-logo-after-text {
       height: 45px;
     }
   }
