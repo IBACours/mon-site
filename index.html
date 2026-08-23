@@ -8,11 +8,11 @@
 
   <style>
 
-    /* Logo SAP à droite du cadre */
-    .sap-logo-right {
+    /* Logo SAP à gauche du cadre */
+    .sap-logo-left {
       height: 80px;
       width: auto;
-      margin-left: 20px;
+      margin-right: 20px; /* espace entre logo et texte */
     }
 
     body {
@@ -88,13 +88,12 @@
       max-width: 900px;
       margin: 20px auto;
 
-      display: flex;               /* texte + logo sur une ligne */
-      justify-content: space-between;
+      display: flex;               /* logo + texte sur une ligne */
       align-items: center;
     }
 
     .sap-text {
-      flex: 1;                     /* texte à gauche */
+      flex: 1;                     /* texte à droite */
     }
 
     .sap-text ul {
@@ -153,12 +152,12 @@
 
     <div class="sap-box">
 
-      <!-- LOGO À DROITE -->
+      <!-- LOGO À GAUCHE -->
       <img src="service-a-la-personne.png"
            alt="Service à la Personne"
-           class="sap-logo-right">
+           class="sap-logo-left">
 
-      <!-- TEXTE À GAUCHE -->
+      <!-- TEXTE À DROITE -->
       <div class="sap-text">
         <ul>
           <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
@@ -236,8 +235,5 @@
 </body>
 </html>
 
-
-</body>
-</html>
 
 
