@@ -161,19 +161,23 @@
         <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant, pour un apprentissage serein et efficace.</p>
 
 
-      <h3>🎁 Avantages</h3>
+     <h3>🎁 Avantages</h3>
 
 <div class="sap-box">
   <div class="sap-text">
     <ul>
       <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
 
-      <!-- ✔ Saut de ligne ajouté -->
       <div style="height: 8px;"></div>
 
-      <li class="credit-impot">
+      <li>
         <strong>Organisme déclaré :</strong> "Services à la Personne"<br>
-        Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
+        Bénéficiez de <strong>50% de crédit d’impôt</strong>
+        
+        <!-- ✔ Logo placé juste après la phrase -->
+        <img src="service-a-la-personne.png" alt="Service à la Personne" class="sap-logo-inline">
+
+        <br>
         Pour plus d'information 
         <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
           cliquez ici
@@ -190,10 +194,6 @@
 
     </ul>
   </div>
-
-  <div class="sap-logo-container">
-    <img src="service-a-la-personne.png" alt="Service à la Personne" class="sap-logo">
-  </div>
 </div>
 
 <style>
@@ -204,8 +204,6 @@
     padding: 15px;
     max-width: 900px;
     margin: 20px auto;
-    display: flex;
-    gap: 20px;
   }
 
   .sap-text ul {
@@ -228,34 +226,23 @@
     font-weight: bold;
   }
 
-  /* ✔ Alignement précis du logo sur la ligne "50% de crédit d'impôt" */
-  .sap-logo-container {
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
-    margin-top: 28px; /* Ajustement pixel-par-pixel */
-  }
-
-  .sap-logo {
-    height: 80px;
+  /* ✔ Logo intégré dans le texte */
+  .sap-logo-inline {
+    height: 40px;      /* Ajuste la taille pour être harmonieux */
     width: auto;
+    vertical-align: middle; /* Aligné parfaitement sur la ligne */
+    margin-left: 8px;  /* Petit espace pour respirer */
   }
 
   @media (max-width: 700px) {
-    .sap-box {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-    }
-
     .sap-text ul {
       padding-left: 0;
       list-style-position: inside;
     }
 
-    .sap-logo {
-      height: 70px;
-      margin-top: 10px;
+    .sap-logo-inline {
+      height: 35px;
+      margin-top: 5px;
     }
   }
 </style>
