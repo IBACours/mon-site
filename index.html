@@ -15,7 +15,7 @@
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: #f7f3e9; /* fond beige comme avant */
+    background-color: #f7f3e9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,16 +40,18 @@
     margin-top: 20px;
     opacity: 0;
     animation: fadeInLogo 1s ease-out 1s forwards;
-    background-color: transparent; /* transparence OK */
+    background-color: transparent;
 }
 
- .sap-logo-after-text {
-  height: 55px;
-  width: auto;
-  margin-top: 6px;   /* Petit espace pour respirer */
-  display: block;    /* Le logo reste sur sa propre ligne */
+/* ✔ Logo juste après les deux phrases */
+.sap-logo-after-text {
+    height: 55px;
+    width: auto;
+    margin-top: 6px;
+    display: block;
 }
- 
+</style>
+
   
 /* Animation du logo */
 @keyframes fadeInLogo {
