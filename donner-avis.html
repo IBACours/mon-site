@@ -3,118 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <title>Déposer un avis</title>
-    <style>
-        body { font-family: Arial; max-width: 800px; margin: auto; padding: 20px; }
-        label { font-weight: bold; }
-        textarea, input { width: 100%; }
-        button { padding: 10px 20px; margin-top: 20px; }
 
-        /* ⭐ Style des étoiles SVG */
-        .stars {
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding-top: 120px; /* espace sous le bandeau fixe */
+            background: #f5f5f7;
+        }
+
+        /* ⭐ Bandeau fixe identique à avis.html */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background: #f5f5f7;
+            padding: 10px 20px;
             display: flex;
-            flex-direction: row-reverse;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .top-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.95em;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #1a252f;
+            transform: scale(1.05);
+        }
+
+        /* ⭐ Formulaire propre */
+        form {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
             cursor: pointer;
         }
 
-        .stars input {
-            display: none;
-        }
-
-        .stars label svg {
-            width: 40px;
-            height: 40px;
-            fill: #ddd; /* ⭐ étoiles grises */
-            transition: fill 0.2s, transform 0.2s;
-        }
-
-        /* Survol */
-        .stars label:hover svg,
-        .stars label:hover ~ label svg {
-            fill: gold;
-            transform: scale(1.2);
-        }
-
-        /* Clic */
-        .stars input:checked ~ label svg {
-            fill: gold;
+        button:hover {
+            background: #1a252f;
         }
     </style>
 </head>
 <body>
 
-<h1>Déposer un avis</h1>
+<!-- ⭐ Bandeau fixe -->
+<div class="top-bar">
+    <a href="index.html" class="btn">⬅ Retour au site</a>
 
-<p>Merci de prendre un moment pour partager votre avis.</p>
+    <div class="top-title">Déposer un avis</div>
 
-<form onsubmit="envoyerAvis(event)">
-    
-    <label for="fullname">Votre nom et prénom :</label><br>
-    <input type="text" id="fullname" required><br><br>
+    <a href="avis.html" class="btn">Voir les avis ➤</a>
+</div>
 
-    <!-- ⭐ Bloc étoiles SVG -->
-    <label>Votre note :</label><br>
+<!-- ⭐ Formulaire -->
+<form action="https://formspree.io/f/TON_CODE_ICI" method="POST">
 
-    <div class="stars">
-        <input type="radio" id="star5" name="note" value="5" required>
-        <label for="star5">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
-        </label>
+    <label>Votre nom et prénom :</label>
+    <input type="text" name="nom" required>
 
-        <input type="radio" id="star4" name="note" value="4">
-        <label for="star4">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
-        </label>
+    <label>Votre note :</label>
+    <select name="note" required>
+        <option value="5">⭐⭐⭐⭐⭐ — 5</option>
+        <option value="4">⭐⭐⭐⭐ — 4</option>
+        <option value="3">⭐⭐⭐ — 3</option>
+        <option value="2">⭐⭐ — 2</option>
+        <option value="1">⭐ — 1</option>
+    </select>
 
-        <input type="radio" id="star3" name="note" value="3">
-        <label for="star3">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
-        </label>
-
-        <input type="radio" id="star2" name="note" value="2">
-        <label for="star2">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
-        </label>
-
-        <input type="radio" id="star1" name="note" value="1">
-        <label for="star1">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
-        </label>
-    </div>
-
-    <br><br>
-
-    <label for="avis">Votre avis :</label><br>
-    <textarea id="avis" required></textarea><br><br>
+    <label>Votre avis :</label>
+    <textarea name="avis" rows="5" required></textarea>
 
     <button type="submit">Envoyer</button>
 </form>
 
-<script>
-function envoyerAvis(e) {
-    e.preventDefault();
-
-    const nom = document.getElementById('fullname').value;
-    const avis = document.getElementById('avis').value;
-    const note = document.querySelector('input[name="note"]:checked').value;
-
-    const sujet = encodeURIComponent("Nouvel avis client");
-
-    const corps = encodeURIComponent(
-        "Nom et prénom : " + nom +
-        "\nNote : " + note + " étoiles" +
-        "\n\nAvis :\n" + avis
-    );
-
-    window.location.href = "mailto:avis.ibacours@gmail.com?subject=" + sujet + "&body=" + corps;
-
-    setTimeout(() => {
-        window.location.href = "confirmation.html";
-    }, 1500);
-}
-</script>
-
-<p>Votre avis sera examiné avant publication.</p>
+<p style="margin-top: 10px; color: #555;">
+    Votre avis sera examiné avant publication.
+</p>
 
 </body>
 </html>
