@@ -114,9 +114,28 @@
     <label>Votre avis :</label>
     <textarea id="avis" rows="5"></textarea>
 
-    <button class="send-btn" onclick="window.location.href='confirmation.html';">
-        Envoyer
-    </button>
+    <button class="send-btn" onclick="envoyerAvis();">
+    Envoyer
+</button>
+
+<script>
+function envoyerAvis() {
+    const nom = document.getElementById('nom').value;
+    const note = document.getElementById('note').value;
+    const avis = document.getElementById('avis').value;
+
+    // Construction du texte du mail
+    const texte = encodeURIComponent(
+        "Nom : " + nom + "\n" +
+        "Note : " + note + "/5\n" +
+        "Avis : " + avis
+    );
+
+    // On passe le texte à la page confirmation
+    window.location.href = "confirmation.html?texte=" + texte;
+}
+</script>
+
 </div>
 
 </body>
