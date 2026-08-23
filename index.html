@@ -1,10 +1,11 @@
+<style>
 /* PAGE D'INTRO */
 #intro {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
 
-    /* ✔ Fond transparent pendant l'apparition */
+    /* Fond transparent pendant l'apparition */
     background-color: transparent;
 
     display: flex;
@@ -13,7 +14,7 @@
     align-items: center;
     z-index: 9999;
 
-    /* ✔ fade-out fluide */
+    /* Disparition fluide */
     animation: fadeOut 1.5s ease-out 4s forwards;
 }
 
@@ -21,11 +22,11 @@
 @keyframes fadeOut {
     0% {
         opacity: 1;
-        background-color: transparent; /* ✔ pas de fond blanc */
+        background-color: transparent;
     }
     100% {
         opacity: 0;
-        background-color: #f7f3e9; /* ✔ ton fond beige revient */
+        background-color: #f7f3e9; /* fond beige revient */
         visibility: hidden;
     }
 }
@@ -38,10 +39,10 @@
     margin-top: 20px;
     opacity: 0;
 
-    /* ✔ Apparition douce */
+    /* Apparition douce */
     animation: fadeInLogo 1.4s ease-out 1.2s forwards;
 
-    /* ✔ Empêche le halo blanc */
+    /* Empêche le halo blanc */
     will-change: opacity, transform;
     background-color: transparent;
     image-rendering: auto;
