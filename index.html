@@ -160,7 +160,8 @@
 
         <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant, pour un apprentissage serein et efficace.</p>
 
-<h3>🎁 Avantages</h3>
+
+      <h3>🎁 Avantages</h3>
 
 <div class="sap-box">
   <div class="sap-text">
@@ -170,22 +171,22 @@
       <!-- ✔ Saut de ligne ajouté -->
       <div style="height: 8px;"></div>
 
-      <li>
+      <li class="credit-impot">
         <strong>Organisme déclaré :</strong> "Services à la Personne"<br>
-                Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
-                               Pour plus d'information 
+        Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
+        Pour plus d'information 
         <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
           cliquez ici
-          
         </a>
       </li>
+
       <li>
-  <strong>Service Avance Immédiate :</strong> service proposé par l’URSSAF et la DGFiP<br>
-  Pour plus d'information 
-  <a href="https://www.servicesalapersonne.gouv.fr/avance-immediate" target="_blank">
-    cliquez ici
-  </a>
-</li>
+        <strong>Service Avance Immédiate :</strong> service proposé par l’URSSAF et la DGFiP<br>
+        Pour plus d'information 
+        <a href="https://www.servicesalapersonne.gouv.fr/avance-immediate" target="_blank">
+          cliquez ici
+        </a>
+      </li>
 
     </ul>
   </div>
@@ -204,10 +205,6 @@
     max-width: 900px;
     margin: 20px auto;
     display: flex;
-
-    /* ✔ Le logo descend davantage */
-    align-items: flex-end;
-
     gap: 20px;
   }
 
@@ -231,12 +228,12 @@
     font-weight: bold;
   }
 
+  /* ✔ Alignement précis du logo sur la ligne "50% de crédit d'impôt" */
   .sap-logo-container {
     flex-shrink: 0;
     display: flex;
-
-    /* ✔ Le logo est aligné sur la deuxième ligne */
-    align-items: flex-end;
+    align-items: flex-start;
+    margin-top: 28px; /* Ajustement pixel-par-pixel */
   }
 
   .sap-logo {
