@@ -8,11 +8,12 @@
 
   <style>
 
-    /* Logo SAP à gauche du cadre */
-    .sap-logo-left {
-      height: 80px;
+    /* Logo SAP inline dans les avantages */
+    .sap-logo-inline {
+      height: 60px;
       width: auto;
-      margin-right: 20px; /* espace entre logo et texte */
+      vertical-align: middle;
+      margin-left: 8px;
     }
 
     body {
@@ -43,7 +44,7 @@
       }
     }
 
-    /* Logo intro */
+    /* Logo intro — taille corrigée */
     .intro-logo {
       width: 180px;
       height: auto;
@@ -87,13 +88,6 @@
       padding: 15px;
       max-width: 900px;
       margin: 20px auto;
-
-      display: flex;               /* logo + texte sur une ligne */
-      align-items: center;
-    }
-
-    .sap-text {
-      flex: 1;                     /* texte à droite */
     }
 
     .sap-text ul {
@@ -142,22 +136,15 @@
       Enseignante et formatrice diplômée, je propose un soutien scolaire personnalisé en mathématiques et français pour des élèves de primaire et de collège, ainsi que pour les adultes souhaitant renforcer leurs compétences et préparer des concours.
     </p>
 
-    <p>✅ <strong>Pédagogie adaptée :</strong> chaque élève est unique.</p>
+    <p>✅ <strong>Pédagogie adaptée :</strong> chaque élève est unique. Je m’adapte à son rythme, ses besoins et ses difficultés pour des progrès durables.</p>
 
-    <p>✅ <strong>Suivi personnalisé :</strong> un accompagnement sur mesure.</p>
+    <p>✅ <strong>Suivi personnalisé :</strong> un accompagnement sur mesure, avec des méthodes variées (exercices ciblés, explications claires, astuces mnémotechniques) pour dédramatiser l’apprentissage et redonner confiance.</p>
 
-    <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile.</p>
+    <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant, pour un apprentissage serein et efficace.</p>
 
     <h3>🎁 Avantages</h3>
 
     <div class="sap-box">
-
-      <!-- LOGO À GAUCHE -->
-      <img src="service-a-la-personne.png"
-           alt="Service à la Personne"
-           class="sap-logo-left">
-
-      <!-- TEXTE À DROITE -->
       <div class="sap-text">
         <ul>
           <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
@@ -166,74 +153,35 @@
 
           <li>
             <strong>Organisme déclaré :</strong> "Services à la Personne"<br>
+
             Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
+
             Pour plus d'information 
             <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
               cliquez ici
             </a>
+
+            <!-- Logo au bout de "cliquez ici" -->
+            <img src="service-a-la-personne.png"
+                 alt="Service à la Personne"
+                 class="sap-logo-inline">
           </li>
 
           <li>
-            <strong>Service Avance Immédiate :</strong> service proposé par l’URSSAF et la DGFiP<br>
+            <strong>Service Avance Immédiate :</strong> service proposé par l’URSSAF et la DGFP<br>
             Pour plus d'information 
-            <a href="https://www.servicesalapersonne.gouv.fr/avance-immediate" target="_blank">
-              cliquez ici
-            </a>
+            <a href="https://www.servicesalapersonne.gouv.fr/avance-immediate" target="_blank">cliquez ici</a>
           </li>
 
         </ul>
       </div>
     </div>
 
-    <!-- CONTACT -->
-    <div style="margin-top: 30px;">
-      <h2 style="font-size: 26px; font-weight: bold; text-decoration: underline;">Contact :</h2>
-
-      <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
-        <img src="Sandrine.jpg" alt="Sandrine IBAREMBORDE" style="width: 100px; height: 100px; border-radius: 50%;">
-
-        <div style="display: flex; flex-direction: column;">
-          <span style="font-size: 22px;">Sandrine IBAREMBORDE</span>
-
-          <a href="mailto:iba.cours@gmail.com"
-             style="font-size: 18px; font-weight: bold; color: black; text-decoration: none;">
-            iba.cours@gmail.com
-          </a>
-
-          <a href="tel:0612272995"
-             style="font-size: 18px; font-weight: bold; color: black; text-decoration: none;">
-            06 12 27 29 95
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <p style="text-align: center; font-weight: bold; font-size: 1.5em; margin-bottom: 10px;">
-      "Parce que la réussite se construit avec patience, écoute et passion."
-    </p>
-
-    <div class="liens-avis" style="margin-top: 20px; text-align: center;">
-      <a href="avis.html" style="margin-right: 30px; font-weight: bold; font-size: 18px;">
-        Lire les avis
-      </a>
-
-      <a href="donner-avis.html" style="font-weight: bold; font-size: 18px;">
-        Déposer un avis
-      </a>
-    </div>
-
-    <p style="text-align: center; font-size: 0.60em; color: black; margin-top: 30px; line-height: 1;">
-      En cas de litige non résolu, le client peut recourir gratuitement au médiateur de la consommation compétent, à savoir CM2C.<br>
-      Site internet :
-      <a href="https://www.cm2c.net" target="_blank" style="color: #2c3e50; font-weight: bold;">
-        https://www.cm2c.net
-      </a>
-    </p>
-
   </div>
 
 </body>
 </html>
+
 
 
 
