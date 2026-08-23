@@ -157,11 +157,14 @@
 
 <h3>🎁 Avantages</h3>
 
-<!-- Bloc Services à la Personne – Version Responsive -->
 <div class="sap-box">
   <div class="sap-text">
     <ul>
       <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
+
+      <!-- ✔ Saut de ligne ajouté -->
+      <br>
+
       <li>
         <strong>Organisme déclaré "Services à la Personne"</strong><br>
         Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
@@ -187,16 +190,19 @@
     max-width: 900px;
     margin: 20px auto;
     display: flex;
-    align-items: center; /* ✔ le logo est aligné au milieu du texte */
+
+    /* ✔ Le logo descend davantage */
+    align-items: flex-end;
+
     gap: 20px;
   }
 
   .sap-text ul {
     margin: 0;
-    padding-left: 25px; /* ✔ alignement parfait du texte */
+    padding-left: 25px;
     font-size: 1.1em;
     line-height: 1.6em;
-    list-style-type: none; /* ✔ supprime les points noirs */
+    list-style-type: none;
   }
 
   .sap-text li::before {
@@ -214,7 +220,9 @@
   .sap-logo-container {
     flex-shrink: 0;
     display: flex;
-    align-items: center; /* ✔ logo centré verticalement */
+
+    /* ✔ Le logo est aligné sur la deuxième ligne */
+    align-items: flex-end;
   }
 
   .sap-logo {
