@@ -8,12 +8,11 @@
 
   <style>
 
-    /* Logo SAP juste après les deux phrases */
-    .sap-logo-after-text {
-      height: 40px;
+    /* Logo SAP à droite du cadre */
+    .sap-logo-right {
+      height: 80px;
       width: auto;
-      margin-top: 6px;
-      display: block; /* Le logo passe sur sa propre ligne */
+      margin-left: 20px;
     }
 
     body {
@@ -44,7 +43,7 @@
       }
     }
 
-    /* Logo intro — taille corrigée */
+    /* Logo intro */
     .intro-logo {
       width: 180px;
       height: auto;
@@ -72,12 +71,12 @@
 
     @keyframes slideDown {
       from { transform: translateY(-40px); opacity: 0; }
-      to   { transform: translateY(0); opacity: 1; }
+      to   { transform: translateY(0); opacity: 1); }
     }
 
     @keyframes slideUp {
       from { transform: translateY(40px); opacity: 0; }
-      to   { transform: translateY(0); opacity: 1; }
+      to   { transform: translateY(0); opacity: 1); }
     }
 
     /* Bloc avantages */
@@ -88,6 +87,14 @@
       padding: 15px;
       max-width: 900px;
       margin: 20px auto;
+
+      display: flex;               /* texte + logo sur une ligne */
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sap-text {
+      flex: 1;                     /* texte à gauche */
     }
 
     .sap-text ul {
@@ -145,6 +152,13 @@
     <h3>🎁 Avantages</h3>
 
     <div class="sap-box">
+
+      <!-- LOGO À DROITE -->
+      <img src="service-a-la-personne.png"
+           alt="Service à la Personne"
+           class="sap-logo-right">
+
+      <!-- TEXTE À GAUCHE -->
       <div class="sap-text">
         <ul>
           <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
@@ -153,26 +167,19 @@
 
           <li>
             <strong>Organisme déclaré :</strong> "Services à la Personne"<br>
-
-            <!-- Phrase 1 -->
             Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
-
-            <!-- Phrase 2 -->
             Pour plus d'information 
             <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
               cliquez ici
-            </a><br>
-
-            <!-- ✔ Logo juste après les deux phrases -->
-            <img src="service-a-la-personne.png"
-                 alt="Service à la Personne"
-                 class="sap-logo-after-text">
+            </a>
           </li>
 
           <li>
-            <strong>Service Avance Immédiate :</strong> service proposé par l’URSSAF et la DGFP<br>
+            <strong>Service Avance Immédiate :</strong> service proposé par l’URSSAF et la DGFiP<br>
             Pour plus d'information 
-            <a href="https://www.servicesalapersonne.gouv.fr/avance-immediate" target="_blank">cliquez ici</a>
+            <a href="https://www.servicesalapersonne.gouv.fr/avance-immediate" target="_blank">
+              cliquez ici
+            </a>
           </li>
 
         </ul>
@@ -189,19 +196,15 @@
         <div style="display: flex; flex-direction: column;">
           <span style="font-size: 22px;">Sandrine IBAREMBORDE</span>
 
-          <div style="display: flex; align-items: center; gap: 8px; margin-top: 5px;">
-            <a href="mailto:iba.cours@gmail.com"
-               style="font-size: 18px; font-weight: bold; color: black; text-decoration: none;">
-              iba.cours@gmail.com
-            </a>
-          </div>
+          <a href="mailto:iba.cours@gmail.com"
+             style="font-size: 18px; font-weight: bold; color: black; text-decoration: none;">
+            iba.cours@gmail.com
+          </a>
 
-          <div style="display: flex; align-items: center; gap: 8px; margin-top: 5px;">
-            <a href="tel:0612272995"
-               style="font-size: 18px; font-weight: bold; color: black; text-decoration: none;">
-              06 12 27 29 95
-            </a>
-          </div>
+          <a href="tel:0612272995"
+             style="font-size: 18px; font-weight: bold; color: black; text-decoration: none;">
+            06 12 27 29 95
+          </a>
         </div>
       </div>
     </div>
@@ -221,8 +224,7 @@
     </div>
 
     <p style="text-align: center; font-size: 0.60em; color: black; margin-top: 30px; line-height: 1;">
-      En cas de litige non résolu, le client peut recourir gratuitement au médiateur de la consommation compétent, à savoir CM2C.
-      <span style="display: block; height: 0px;"></span>
+      En cas de litige non résolu, le client peut recourir gratuitement au médiateur de la consommation compétent, à savoir CM2C.<br>
       Site internet :
       <a href="https://www.cm2c.net" target="_blank" style="color: #2c3e50; font-weight: bold;">
         https://www.cm2c.net
@@ -234,7 +236,4 @@
 </body>
 </html>
 
-
-</body>
-</html>
 
