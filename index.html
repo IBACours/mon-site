@@ -187,16 +187,16 @@
     max-width: 900px;
     margin: 20px auto;
     display: flex;
-    align-items: flex-start; /* corrige le décalage vertical */
+    align-items: center; /* ✔ le logo est aligné au milieu du texte */
     gap: 20px;
   }
 
   .sap-text ul {
     margin: 0;
-    padding-left: 25px; /* alignement parfait */
+    padding-left: 25px; /* ✔ alignement parfait du texte */
     font-size: 1.1em;
     line-height: 1.6em;
-    list-style-type: none; /* supprime les points noirs */
+    list-style-type: none; /* ✔ supprime les points noirs */
   }
 
   .sap-text li::before {
@@ -213,6 +213,8 @@
 
   .sap-logo-container {
     flex-shrink: 0;
+    display: flex;
+    align-items: center; /* ✔ logo centré verticalement */
   }
 
   .sap-logo {
@@ -238,7 +240,6 @@
     }
   }
 </style>
-
 
 
         
