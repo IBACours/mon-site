@@ -89,7 +89,12 @@
 
 <p>Cliquez ci-dessous pour l’envoyer par email.</p>
 
-<a id="mailBtn" class="mail-btn">Envoyer l’avis par email</a>
+<a class="mail-btn"
+   href="mailto:avis.ibacours@gmail.com?subject=Nouvel%20avis%20client"
+   onclick="setTimeout(() => { window.location.href='index.html'; }, 800);">
+   Envoyer l’avis par email
+</a>
+
 
 <script>
 window.onload = function() {
