@@ -4,29 +4,19 @@
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-
-    /* Fond transparent pendant l'apparition */
-    background-color: transparent;
-
+    background-color: #f7f3e9; /* ✔ fond beige comme avant */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-
-    /* Disparition fluide */
-    animation: introFadeOut 1.5s ease-out 4s forwards;
+    animation: introFadeOut 2s ease-in-out 3s forwards; /* ✔ ton ancien fade-out qui marchait */
 }
 
 /* Animation de disparition */
 @keyframes introFadeOut {
-    0% {
-        opacity: 1;
-        background-color: transparent;
-    }
-    100% {
+    to {
         opacity: 0;
-        background-color: #f7f3e9; /* ton fond beige revient */
         visibility: hidden;
     }
 }
@@ -39,17 +29,15 @@
     margin-top: 20px;
     opacity: 0;
 
-    /* Apparition douce */
-    animation: introLogoFadeIn 1.4s ease-out 1.2s forwards;
+    /* ✔ Animation d’apparition qui marchait avant */
+    animation: fadeInLogo 1s ease-out 1s forwards;
 
-    /* Empêche le halo blanc */
-    will-change: opacity, transform;
+    /* ✔ Transparence préservée */
     background-color: transparent;
-    image-rendering: auto;
 }
 
 /* Animation du logo */
-@keyframes introLogoFadeIn {
+@keyframes fadeInLogo {
     from { opacity: 0; transform: scale(0.9); }
     to   { opacity: 1; transform: scale(1); }
 }
@@ -58,21 +46,21 @@
 .intro-title {
     font-size: 48px;
     font-weight: bold;
-    animation: introSlideDown 1s ease-out;
+    animation: slideDown 1s ease-out;
 }
 
 .intro-subtitle {
     font-size: 24px;
     margin-top: 10px;
-    animation: introSlideUp 1s ease-out 0.5s;
+    animation: slideUp 1s ease-out 0.5s;
 }
 
-@keyframes introSlideDown {
+@keyframes slideDown {
     from { transform: translateY(-40px); opacity: 0; }
     to   { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes introSlideUp {
+@keyframes slideUp {
     from { transform: translateY(40px); opacity: 0; }
     to   { transform: translateY(0); opacity: 1; }
 }
