@@ -36,12 +36,15 @@
     margin-top: 20px;
     opacity: 0;
 
-    /* ✔ Apparition douce */
+    /* Animation fluide */
     animation: fadeInLogo 1.4s ease-out 1.2s forwards;
 
-    /* ✔ Transparence restaurée */
-    mix-blend-mode: normal;
-    background: transparent;
+    /* ✔ Empêche le halo blanc */
+    will-change: opacity, transform;
+    background-color: transparent;
+    image-rendering: auto;
+}
+
 }
 
 @keyframes fadeInLogo {
