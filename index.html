@@ -7,14 +7,15 @@
   <title>IBA Cours - Sandrine Ibaremborde</title>
 
   <style>
-    
-   .sap-logo-inline {
-  height: 60px;
-  width: auto;
-  vertical-align: middle;  /* aligné sur la ligne du texte */
-  margin-left: 8px;        /* petit espace après "cliquez ici" */
-}
- 
+
+    /* Logo SAP inline dans les avantages */
+    .sap-logo-inline {
+      height: 60px;
+      width: auto;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
     body {
       background-color: #f7f3e9;
       font-family: Arial, sans-serif;
@@ -43,10 +44,9 @@
       }
     }
 
-    /* Logo intro */
+    /* Logo intro — taille corrigée */
     .intro-logo {
-      width: 60%;
-      max-width: 500px;
+      width: 180px;
       height: auto;
       margin-top: 20px;
       opacity: 0;
@@ -110,24 +110,6 @@
       font-weight: bold;
     }
 
-    /* Logo juste après les deux phrases */
-    .sap-logo-after-text {
-      height: 55px;
-      width: auto;
-      margin-top: 6px;
-      display: block;
-    }
-
-    @media (max-width: 700px) {
-      .sap-text ul {
-        padding-left: 0;
-        list-style-position: inside;
-      }
-
-      .sap-logo-after-text {
-        height: 45px;
-      }
-    }
   </style>
 </head>
 
@@ -170,21 +152,20 @@
           <div style="height: 8px;"></div>
 
           <li>
-  <strong>Organisme déclaré :</strong> "Services à la Personne"<br>
+            <strong>Organisme déclaré :</strong> "Services à la Personne"<br>
 
-  Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
+            Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
 
-  Pour plus d'information 
-  <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
-    cliquez ici
-  </a>
+            Pour plus d'information 
+            <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">
+              cliquez ici
+            </a>
 
-  <!-- logo juste au bout de la phrase "cliquez ici" -->
-  <img src="service-a-la-personne.png"
-       alt="Service à la Personne"
-       class="sap-logo-inline">
-</li>
-
+            <!-- Logo au bout de "cliquez ici" -->
+            <img src="service-a-la-personne.png"
+                 alt="Service à la Personne"
+                 class="sap-logo-inline">
+          </li>
 
           <li>
             <strong>Service Avance Immédiate :</strong> service proposé par l’URSSAF et la DGFP<br>
@@ -200,3 +181,4 @@
 
 </body>
 </html>
+
