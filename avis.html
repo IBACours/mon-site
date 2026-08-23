@@ -9,25 +9,34 @@
             font-family: Arial, sans-serif;
             max-width: 900px;
             margin: auto;
-            padding: 20px;
+            padding-top: 100px; /* espace sous la barre fixe */
             background: #f5f5f7;
         }
 
-        /* ⭐ Barre du haut FIXE */
+        /* ⭐ BARRE FIXE EN HAUT */
         .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background: #f5f5f7;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .btn {
-            padding: 12px 20px;
+            padding: 10px 18px;
             background: #2c3e50;
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            font-size: 1.05em;
+            font-size: 1em;
             transition: background 0.2s, transform 0.2s;
         }
 
@@ -88,13 +97,12 @@
 </head>
 <body>
 
-<!-- ⭐ BARRE DU HAUT FIXE -->
+<!-- ⭐ BARRE FIXE -->
 <div class="top-bar">
     <a href="index.html" class="btn">⬅ Retour au site</a>
     <a href="donner-avis.html" class="btn">Laisser un avis ➤</a>
 </div>
 
-<!-- ⭐ TITRE FIXE -->
 <h1>Avis des clients</h1>
 
 <p>Voici les avis validés :</p>
