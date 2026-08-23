@@ -9,11 +9,11 @@
             font-family: Arial, sans-serif;
             max-width: 900px;
             margin: auto;
-            padding-top: 120px; /* espace sous la barre fixe */
+            padding-top: 100px; /* espace sous la barre fixe */
             background: #f5f5f7;
         }
 
-        /* ⭐ BARRE FIXE EN HAUT AVEC TITRE */
+        /* ⭐ BARRE FIXE AVEC TITRE + BOUTONS */
         .top-bar {
             position: fixed;
             top: 0;
@@ -22,7 +22,7 @@
             max-width: 900px;
             margin: auto;
             background: #f5f5f7;
-            padding: 15px 20px;
+            padding: 10px 20px; /* hauteur réduite */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -31,28 +31,21 @@
         }
 
         .top-title {
-            position: fixed;
-            top: 55px;
-            left: 0;
-            width: 100%;
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            font-size: 32px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px; /* taille réduite */
             font-weight: bold;
             color: #333;
-            z-index: 998;
-            background: #f5f5f7;
-            padding: 10px 0;
         }
 
         .btn {
-            padding: 10px 18px;
+            padding: 8px 14px; /* boutons plus petits */
             background: #2c3e50;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 1em;
+            border-radius: 6px;
+            font-size: 0.95em;
             transition: background 0.2s, transform 0.2s;
         }
 
@@ -106,14 +99,14 @@
 </head>
 <body>
 
-<!-- ⭐ BARRE FIXE AVEC BOUTONS -->
+<!-- ⭐ BARRE FIXE AVEC TITRE AU CENTRE -->
 <div class="top-bar">
     <a href="index.html" class="btn">⬅ Retour au site</a>
+
+    <div class="top-title">Avis des clients</div>
+
     <a href="donner-avis.html" class="btn">Laisser un avis ➤</a>
 </div>
-
-<!-- ⭐ TITRE FIXE DANS LE BANDEAU -->
-<div class="top-title">Avis des clients</div>
 
 <p>Voici les avis validés :</p>
 
