@@ -161,7 +161,7 @@
         <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant, pour un apprentissage serein et efficace.</p>
 
 
-    <h3>🎁 Avantages</h3>
+   <h3>🎁 Avantages</h3>
 
 <div class="sap-box">
   <div class="sap-text">
@@ -176,8 +176,8 @@
         <!-- Ligne 1 -->
         Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
 
-        <!-- Logo placé entre les deux lignes -->
-        <div class="sap-logo-between">
+        <!-- ✔ Logo entre les deux lignes, aligné à droite -->
+        <div class="sap-logo-between-right">
           <img src="service-a-la-personne.png" alt="Service à la Personne">
         </div>
 
@@ -230,13 +230,13 @@
     font-weight: bold;
   }
 
-  /* ✔ Logo entre les deux lignes */
-  .sap-logo-between {
-    text-align: left;       /* Aligné comme le texte */
+  /* ✔ Logo entre les deux lignes, aligné à droite */
+  .sap-logo-between-right {
+    text-align: right;      /* Aligné à droite */
     margin: 6px 0;          /* Espacement harmonieux */
   }
 
-  .sap-logo-between img {
+  .sap-logo-between-right img {
     height: 55px;           /* Taille idéale */
     width: auto;
   }
@@ -247,7 +247,11 @@
       list-style-position: inside;
     }
 
-    .sap-logo-between img {
+    .sap-logo-between-right {
+      text-align: center;   /* Sur mobile, centré pour un meilleur rendu */
+    }
+
+    .sap-logo-between-right img {
       height: 45px;
     }
   }
