@@ -2,27 +2,27 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>AVANCE IMMEDIATE</title>
+    <title>AVANCE IMMÉDIATE</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 900px;
             margin: auto;
-            padding-top: 50px; /* espace sous la barre fixe */
+            padding-top: 80px; /* espace sous la barre fixe */
             background: #f5f5f7;
         }
 
-        /* ⭐ BARRE FIXE AVEC TITRE + BOUTONS */
+        /* ⭐ BARRE FIXE IDENTIQUE AUX AUTRES PAGES */
         .top-bar {
             position: fixed;
             top: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
             max-width: 900px;
-            margin: auto;
             background: #f5f5f7;
-            padding: 10px 20px; /* hauteur réduite */
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,18 +34,18 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 32px; /* taille réduite */
+            font-size: 32px;
             font-weight: bold;
             color: #333;
         }
 
         .btn {
-            padding: 8px 14px; /* boutons plus petits */
+            padding: 10px 18px;
             background: #2c3e50;
             color: white;
             text-decoration: none;
             border-radius: 6px;
-            font-size: 0.95em;
+            font-size: 1em;
             transition: background 0.2s, transform 0.2s;
         }
 
@@ -54,3 +54,38 @@
             transform: scale(1.05);
         }
 
+        /* ⭐ CONTENU */
+        .content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ⭐ BARRE FIXE IDENTIQUE AUX AUTRES PAGES -->
+    <div class="top-bar">
+        <a href="index.html" class="btn">Accueil</a>
+        <div class="top-title">Avance Immédiate</div>
+        <a href="Avis.html" class="btn">Avis</a>
+    </div>
+
+    <!-- ⭐ CONTENU PRINCIPAL -->
+    <div class="content">
+        <h2>Qu’est‑ce que l’Avance Immédiate ?</h2>
+        <p>
+            Ici tu mets ton texte, tes explications, tes images, etc.
+        </p>
+    </div>
+
+</body>
+</html>
