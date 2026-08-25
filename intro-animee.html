@@ -5,10 +5,68 @@
 <title>Intro animée</title>
 
 <style>
-    /* TON CSS EXACT ICI */
-</style>
+/* PAGE D'INTRO */
+#intro {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #f7f3e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: introFadeOut 2s ease-in-out 3s forwards;
+}
 
+@keyframes introFadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Logo SAP */
+.intro-logo {
+    width: 60%;
+    max-width: 500px;
+    height: auto;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInLogo 1s ease-out 1s forwards;
+    background-color: transparent;
+}
+
+@keyframes fadeInLogo {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Animations du texte */
+.intro-title {
+    font-size: 48px;
+    font-weight: bold;
+    animation: slideDown 1s ease-out;
+}
+
+.intro-subtitle {
+    font-size: 24px;
+    margin-top: 10px;
+    animation: slideUp 1s ease-out 0.5s;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+</style>
 </head>
+
 <body>
 
 <div id="intro">
