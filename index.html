@@ -121,12 +121,10 @@
       font-weight: bold;
     }
 
-    /* Logos identiques */
-    .sap-logo {
-      height: 70px;
-      width: auto;
-      display: block;
-      margin: 10px auto 0 auto;
+    /* Empêche les logos de déborder sur mobile */
+    .sap-box img {
+      max-width: 100%;
+      height: auto;
     }
 
     @media (max-width: 700px) {
@@ -135,8 +133,10 @@
         list-style-position: inside;
       }
 
-      .sap-logo {
-        height: 55px;
+      .sap-box img {
+        max-width: 70%;
+        margin: 0 auto;
+        display: block;
       }
     }
   </style>
@@ -186,31 +186,27 @@
               <!-- Crédit d'impôt -->
               <div style="flex:1; min-width:280px; margin-right:20px; text-align:center;">
                 <p style="text-align:left;">
-                  Bénéficiez de <strong>50% de crédit d’impôt</strong>
-                  <span style="display:block; margin-top:10px;">
-                    Pour plus d'information 
-                    <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">cliquez ici</a>
-                  </span>
+                  Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
+                  Pour plus d'information 
+                  <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">cliquez ici</a>
                 </p>
 
                 <img src="service-a-la-personne.png"
-                     class="sap-logo"
-                     alt="Service à la Personne">
+                     alt="Service à la Personne"
+                     style="height:80px; width:auto; margin-top:8px;">
               </div>
 
               <!-- Avance Immédiate -->
               <div style="flex:1; min-width:280px; text-align:center;">
                 <p style="text-align:left;">
-                  Bénéficiez de <strong>L'Avance Immédiate</strong>
-                  <span style="display:block; margin-top:10px;">
-                    Pour plus d'information 
-                    <a href="Avance-Immediate.html">cliquez ici</a>
-                  </span>
+                  Bénéficiez de <strong>L'Avance Immédiate</strong><br>
+                  Pour plus d'information 
+                  <a href="Avance-Immediate.html">cliquez ici</a>
                 </p>
 
-                <img src="avance-immediate.jpg"
-                     class="sap-logo"
-                     alt="Avance Immédiate">
+                <img src="avance-immediate.png"
+                     alt="Avance Immédiate"
+                     style="height:80px; width:auto; margin-top:8px;">
               </div>
 
             </div>
