@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IBA Cours - Sandrine Ibaremborde</title>
+
   <style>
     body {
       background-color: #f7f3e9;
@@ -11,6 +12,7 @@
       margin: 0;
       padding: 0;
     }
+
     .header-logo {
       width: 300px;
       height: auto;
@@ -18,7 +20,7 @@
       margin: 0 auto;
     }
 
-    /* PAGE D'INTRO */
+    /* INTRO */
     #intro {
       position: fixed;
       top: 0; left: 0;
@@ -31,6 +33,7 @@
       z-index: 9999;
       animation: introFadeOut 2s ease-in-out 3s forwards;
     }
+
     @keyframes introFadeOut {
       to { opacity: 0; visibility: hidden; }
     }
@@ -42,8 +45,8 @@
       margin-top: 20px;
       opacity: 0;
       animation: fadeInLogo 1s ease-out 1s forwards;
-      background-color: transparent;
     }
+
     @keyframes fadeInLogo {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
@@ -54,21 +57,28 @@
       font-weight: bold;
       animation: slideDown 1s ease-out;
     }
+
     .intro-subtitle {
       font-size: 24px;
       margin-top: 10px;
       animation: slideUp 1s ease-out 0.5s;
     }
+
     @keyframes slideDown {
       from { transform: translateY(-40px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+
     @keyframes slideUp {
       from { transform: translateY(40px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
 
-    .header { text-align: center; margin-top: 40px; }
+    .header {
+      text-align: center;
+      margin-top: 40px;
+    }
+
     .content {
       max-width: 900px;
       margin: auto;
@@ -77,14 +87,16 @@
       line-height: 1.6em;
     }
 
+    /* AVANTAGES */
     .sap-box {
       background-color: #f8f6ef;
       border: 1px solid #000;
       border-radius: 6px;
       padding: 15px;
       max-width: 900px;
-      margin: 20px auto;
+      margin: 20px auto 40px auto; /* s'arrête juste avant Contact */
     }
+
     .sap-text ul {
       margin: 0;
       padding-left: 25px;
@@ -92,12 +104,17 @@
       line-height: 1.6em;
       list-style-type: none;
     }
-    .sap-text li { margin-bottom: 12px; }
+
+    .sap-text li {
+      margin-bottom: 12px;
+    }
+
     .sap-text li::before {
       content: "✓ ";
       color: #2c3e50;
       font-weight: bold;
     }
+
     .sap-text a {
       color: #2c3e50;
       text-decoration: underline;
@@ -105,13 +122,16 @@
     }
 
     @media (max-width: 700px) {
-      .sap-text ul { padding-left: 0; list-style-position: inside; }
-      .sap-logo-after-text { height: 45px; }
+      .sap-text ul {
+        padding-left: 0;
+        list-style-position: inside;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <!-- INTRO -->
   <div id="intro">
     <h1 class="intro-title">IBA COURS</h1>
@@ -120,52 +140,90 @@
     <img src="service-a-la-personne.png" class="intro-logo" alt="Service à la Personne">
   </div>
 
-  <!-- Titre -->
+  <!-- LOGO DU HAUT -->
   <div class="header">
-    <img src="avance-immediate.png.png" class="header-logo" alt="avance-imemediate">
+    <img src="Logo IBA COURS.png" class="header-logo" alt="Logo IBA COURS">
   </div>
 
-  <!-- Contenu principal -->
+  <!-- CONTENU -->
   <div class="content">
+
     <p>Enseignante et formatrice diplômée, je propose un soutien scolaire personnalisé en mathématiques et français pour des élèves de primaire et de collège, ainsi que pour les adultes souhaitant renforcer leurs compétences et préparer des concours.</p>
 
     <p>✅ <strong>Pédagogie adaptée :</strong> chaque élève est unique. Je m’adapte à son rythme, ses besoins et ses difficultés pour des progrès durables.</p>
+
     <p>✅ <strong>Suivi personnalisé :</strong> un accompagnement sur mesure, avec des méthodes variées (exercices ciblés, explications claires, astuces mnémotechniques) pour dédramatiser l’apprentissage et redonner confiance.</p>
+
     <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant, pour un apprentissage serein et efficace.</p>
 
     <h3>🎁 Avantages</h3>
+
     <div class="sap-box">
       <div class="sap-text">
         <ul>
+
           <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
+
           <li><strong>Organisme déclaré :</strong> "Services à la Personne"</li>
 
-          <!-- Bloc double avantages -->
-<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin-left:22px;margin-top:10px;margin-bottom:20px;">
-  <!-- Crédit d'impôt -->
-  <div style="flex:1;min-width:300px;margin-right:20px;">
-    <p>Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
-    Pour plus d'information <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">cliquez ici</a></p>
-    <img src="service-a-la-personne.png" alt="Service à la Personne" style="height:80px;width:auto;margin-top:8px;">
-  </div>
+          <!-- BLOC DOUBLE AVANTAGES -->
+          <li style="list-style-type:none; margin-left:22px; margin-top:10px;">
 
-  <!-- Avance Immédiate -->
-  <div style="flex:1;min-width:300px;">
-    <p>Bénéficiez de <strong>L'Avance Immédiate</strong><br>
-    Pour plus d'information <a href="Avance-Immediate.html">cliquez ici</a></p>
-    <img src="avance-immediate.png" alt="Avance Immédiate" style="height:80px;width:auto;margin-top:8px;">
-  </div>
-</div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
 
-    <!-- Contact -->
+              <!-- Crédit d'impôt -->
+              <div style="flex:1; min-width:280px; margin-right:20px; text-align:center;">
+                <p style="text-align:left;">
+                  Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
+                  Pour plus d'information 
+                  <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">cliquez ici</a>
+                </p>
+
+                <img src="service-a-la-personne.png"
+                     alt="Service à la Personne"
+                     style="height:80px; width:auto; margin-top:8px;">
+              </div>
+
+              <!-- Avance Immédiate -->
+              <div style="flex:1; min-width:280px; text-align:center;">
+                <p style="text-align:left;">
+                  Bénéficiez de <strong>L'Avance Immédiate</strong><br>
+                  Pour plus d'information 
+                  <a href="Avance-Immediate.html">cliquez ici</a>
+                </p>
+
+                <img src="avance-immediate.jpg"
+                     alt="Avance Immédiate"
+                     style="height:80px; width:auto; margin-top:8px;">
+              </div>
+
+            </div>
+
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
     <div style="margin-top:30px;">
       <h2 style="font-size:26px;font-weight:bold;text-decoration:underline;">Contact :</h2>
+
       <div style="display:flex;align-items:center;gap:15px;margin-top:10px;">
         <img src="Sandrine.jpg" alt="Sandrine IBAREMBORDE" style="width:100px;height:100px;border-radius:50%;">
+
         <div style="display:flex;flex-direction:column;">
           <span style="font-size:22px;">Sandrine IBAREMBORDE</span>
-          <a href="mailto:iba.cours@gmail.com" style="font-size:18px;color:#1E88E5;text-decoration:underline;">iba.cours@gmail.com</a>
-          <a href="tel:0612272995" style="font-size:18px;font-weight:bold;color:black;text-decoration:none;">06 12 27 29 95</a>
+
+          <a href="mailto:iba.cours@gmail.com"
+             style="font-size:18px;color:#1E88E5;text-decoration:underline;">
+             iba.cours@gmail.com
+          </a>
+
+          <a href="tel:0612272995"
+             style="font-size:18px;font-weight:bold;color:black;text-decoration:none;">
+             06 12 27 29 95
+          </a>
         </div>
       </div>
     </div>
@@ -181,4 +239,13 @@
 
     <p style="text-align:center;font-size:0.6em;color:black;margin-top:30px;line-height:1;">
       En cas de litige non résolu, le client peut recourir gratuitement au médiateur de la consommation compétent, à savoir CM2C.<br>
-      Site internet : <a href="https://www.cm2c.net" target="_blank" style="color:#2c3e50;font-weight:bold;">https://
+      Site internet :
+      <a href="https://www.cm2c.net" target="_blank" style="color:#2c3e50;font-weight:bold;">
+        https://www.cm2c.net
+      </a>
+    </p>
+
+  </div>
+
+</body>
+</html>
