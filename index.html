@@ -6,21 +6,6 @@
   <title>IBA Cours - Sandrine Ibaremborde</title>
 
   <style>
-    /* Taille identique pour les deux logos */
-.sap-logo {
-  height: 70px;
-  width: auto;
-  display: block;
-  margin: 8px auto 0 auto;
-}
-
-/* Sur mobile : on réduit légèrement */
-@media (max-width: 700px) {
-  .sap-logo {
-    height: 55px;
-  }
-}
-
     body {
       background-color: #f7f3e9;
       font-family: Arial, sans-serif;
@@ -136,10 +121,12 @@
       font-weight: bold;
     }
 
-    /* Empêche les logos de déborder sur mobile */
-    .sap-box img {
-      max-width: 100%;
-      height: auto;
+    /* Logos identiques */
+    .sap-logo {
+      height: 70px;
+      width: auto;
+      display: block;
+      margin: 10px auto 0 auto;
     }
 
     @media (max-width: 700px) {
@@ -148,10 +135,8 @@
         list-style-position: inside;
       }
 
-      .sap-box img {
-        max-width: 70%;
-        margin: 0 auto;
-        display: block;
+      .sap-logo {
+        height: 55px;
       }
     }
   </style>
@@ -201,31 +186,31 @@
               <!-- Crédit d'impôt -->
               <div style="flex:1; min-width:280px; margin-right:20px; text-align:center;">
                 <p style="text-align:left;">
-  Bénéficiez de <strong>50% de crédit d’impôt</strong>
-  <span style="display:block; margin-top:10px;">
-    Pour plus d'information 
-    <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">cliquez ici</a>
-  </span>
-</p>
+                  Bénéficiez de <strong>50% de crédit d’impôt</strong>
+                  <span style="display:block; margin-top:10px;">
+                    Pour plus d'information 
+                    <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">cliquez ici</a>
+                  </span>
+                </p>
 
-           <img src="service-a-la-personne.png"
-                alt="Service à la Personne"
-                tyle="height:80px; width:auto; margin-top:8px;">
+                <img src="service-a-la-personne.png"
+                     class="sap-logo"
+                     alt="Service à la Personne">
               </div>
 
               <!-- Avance Immédiate -->
               <div style="flex:1; min-width:280px; text-align:center;">
-               <p style="text-align:left;">
-  Bénéficiez de <strong>L'Avance Immédiate</strong>
-  <span style="display:block; margin-top:10px;">
-    Pour plus d'information 
-    <a href="Avance-Immediate.html">cliquez ici</a>
-  </span>
-</p>
+                <p style="text-align:left;">
+                  Bénéficiez de <strong>L'Avance Immédiate</strong>
+                  <span style="display:block; margin-top:10px;">
+                    Pour plus d'information 
+                    <a href="Avance-Immediate.html">cliquez ici</a>
+                  </span>
+                </p>
 
-                <img src="avance-immediate.png"
-                     alt="Avance Immédiate"
-                     style="height:80px; width:auto; margin-top:8px;">
+                <img src="avance-immediate.jpg"
+                     class="sap-logo"
+                     alt="Avance Immédiate">
               </div>
 
             </div>
