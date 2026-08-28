@@ -86,7 +86,27 @@ body {
   font-size: 1.1em;
   line-height: 1.6em;
 }
+.main-benefits {
+  list-style-type: none;
+  padding-left: 25px;
+  margin-bottom: 25px;
+}
 
+.main-benefits li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.main-benefits li::before {
+  content: "✓";
+  font-weight: bold;
+  color: #2c3e50;
+  position: absolute;
+  left: 0;
+}
+
+    
 /* AVANTAGES */
 .sap-box {
   background-color: #f8f6ef;
