@@ -62,7 +62,7 @@
 /* --- CONTENEUR DES DEUX LOGOS SAP + AI --- */
 .logo-row {
     display: flex;
-    flex-direction: column; /* 📱 MOBILE : colonne */
+    flex-direction: column; /* 📱 MOBILE PAR DÉFAUT */
     align-items: center;
     gap: 10px;
     width: 100%;
@@ -76,7 +76,7 @@
 }
 
 /* 💻 ORDINATEUR : logos côte à côte */
-@media (min-width: 900px) {
+@media (min-width: 768px) {
     .logo-row {
         flex-direction: row; /* côte à côte */
         justify-content: center;
