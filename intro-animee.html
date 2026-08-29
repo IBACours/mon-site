@@ -5,9 +5,6 @@
 <title>Intro animée</title>
 
 <style>
-.intro-logo {
-    flex-shrink: 0;
-}
 
 /* PAGE D'INTRO */
 #intro {
@@ -26,7 +23,7 @@
 
 /* --- CONTENEUR 3D AVEC ANIMATION SÉQUENCÉE --- */
 .logo-sequence {
-    width: 500px;
+    width: 500px;       /* même taille que sur la page de garde */
     height: 500px;
     position: relative;
     transform-style: preserve-3d;
@@ -46,12 +43,8 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transform: rotateX(180deg) scaleY(-1); /* INDISPENSABLE */
-}
 
-}
-
-.logo-back {
+    /* INDISPENSABLE : sinon tu vois deux logos */
     transform: rotateX(180deg) scaleY(-1);
 }
 
@@ -86,6 +79,7 @@
     opacity: 0;
     animation: sapAppear 1.5s ease-out 14s forwards;
 }
+
 </style>
 </head>
 
