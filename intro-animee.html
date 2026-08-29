@@ -32,16 +32,13 @@
 }
 
 /* Faces recto-verso */
-.logo-face, .logo-back {
-    position: absolute;
+.logo-face,
+.logo-back {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    object-fit: contain;   /* garde les proportions exactes */
 }
 
-.logo-back {
-    transform: rotateX(180deg) scaleY(-1);
-}
 
 /* Lumière glissante */
 .logo-sequence::before {
