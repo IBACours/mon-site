@@ -22,12 +22,13 @@
 
 /* --- CONTENEUR 3D AVEC ANIMATION SÉQUENCÉE --- */
 .logo-sequence {
-    width: 500px;
-    height: 500px;
+    width: 500px;       /* même taille que sur la page de garde */
+    height: 500px;      /* hauteur fixe pour éviter les déformations */
     position: relative;
     transform-style: preserve-3d;
     animation: sequenceAnim 14s linear forwards;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
+    flex-shrink: 0;     /* empêche le conteneur de se réduire */
 }
 
 /* Faces recto-verso */
@@ -109,7 +110,7 @@
     <!-- ROTATION SÉQUENCÉE RECTO-VERSO -->
     <div class="logo-sequence">
         <img src="Logo IBA COURS.png" class="logo-face">
-        <img src="Logo IBA COURS.png" class="logo-back">
+        <img src="Logo IBA COURS.png" class="logo-face">
     </div>
 
     <p class="intro-subtitle">Organisme déclaré</p>
