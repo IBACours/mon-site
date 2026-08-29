@@ -55,9 +55,10 @@
 }
 
 /* --- CONTENEUR DES LOGOS SAP + AI --- */
+/* 💻 PC PAR DÉFAUT : côte à côte */
 .logo-row {
     display: flex;
-    flex-direction: row; /* 💻 PAR DÉFAUT : côte à côte */
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 40px;
@@ -71,20 +72,20 @@
 }
 
 .logo-ai {
-    width: 500px; /* 🔥 AI plus grand sur PC 🔥 */
+    width: 500px; /* AI plus grand sur PC */
     opacity: 0;
 }
 
-/* 📱 MOBILE : logos en colonne */
-@media screen and (max-width: 768px) {
+/* 📱 MOBILE / TABLET tactile : logos en colonne */
+@media (hover: none) {
     .logo-row {
-        flex-direction: column; /* en dessous */
+        flex-direction: column; /* l’un en dessous de l’autre */
         gap: 10px;
     }
 
     .logo-sap,
     .logo-ai {
-        width: min(75vw, 360px);
+        width: min(75vw, 360px); /* tailles adaptées mobile */
     }
 }
 
