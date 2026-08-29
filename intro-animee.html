@@ -17,8 +17,6 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-
-    /* Perspective globale */
     perspective: 1200px;
 }
 
@@ -28,11 +26,7 @@
     height: 500px;
     position: relative;
     transform-style: preserve-3d;
-
-    /* Animation séquencée */
     animation: sequenceAnim 14s linear forwards;
-
-    /* Ombre réaliste */
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
 }
 
@@ -44,10 +38,6 @@
     backface-visibility: hidden;
 }
 
-/* Face avant */
-.logo-face {}
-
-/* Face arrière : retournée pour rester lisible */
 .logo-back {
     transform: rotateX(180deg) scaleY(-1);
 }
@@ -70,21 +60,10 @@
 
 /* Animation séquencée */
 @keyframes sequenceAnim {
-
-    /* 0–2s : logo normal */
     0%   { transform: rotateX(0deg) rotateY(0deg); }
     15%  { transform: rotateX(0deg) rotateY(0deg); }
-
-    /* 2–6s : 3 rotations horizontales */
-    15%  { transform: rotateX(0deg) rotateY(0deg); }
-    40%  { transform: rotateX(1080deg) rotateY(0deg); }
-
-    /* 6–10s : 3 rotations verticales */
     40%  { transform: rotateX(1080deg) rotateY(0deg); }
     70%  { transform: rotateX(1080deg) rotateY(1080deg); }
-
-    /* 10–14s : retour normal et stop */
-    70%  { transform: rotateX(0deg) rotateY(0deg); }
     100% { transform: rotateX(0deg) rotateY(0deg); }
 }
 
@@ -95,43 +74,31 @@
     100% { transform: translateX(-100%); }
 }
 
-/* Logo SAP (en dessous) */
+/* --- LOGO SAP : apparition APRÈS l’animation --- */
 .intro-logo {
     width: 60%;
     max-width: 500px;
     height: auto;
-    margin-top: 20px;
     opacity: 0;
-    animation: fadeInLogo 1s ease-out 1s forwards;
-    background-color: transparent;
+    margin-top: 20px;
+
+    /* Apparition retardée de 14 secondes */
+    animation: sapAppear 1.5s ease-out 14s forwards;
 }
 
-@keyframes fadeInLogo {
+@keyframes sapAppear {
     from { opacity: 0; transform: scale(0.9); }
     to   { opacity: 1; transform: scale(1); }
 }
 
-/* Animations du texte */
-.intro-title {
-    font-size: 48px;
-    font-weight: bold;
-    animation: slideDown 1s ease-out;
-}
-
+/* Texte */
 .intro-subtitle {
     font-size: 24px;
     margin-top: 10px;
-    animation: slideUp 1s ease-out 0.5s;
-}
+    opacity: 0;
 
-@keyframes slideDown {
-    from { transform: translateY(-40px); opacity: 0; }
-    to   { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(40px); opacity: 0; }
-    to   { transform: translateY(0); opacity: 1; }
+    /* Apparition synchronisée avec le logo SAP */
+    animation: sapAppear 1.5s ease-out 14s forwards;
 }
 </style>
 </head>
