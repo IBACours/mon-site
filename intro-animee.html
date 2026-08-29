@@ -62,7 +62,7 @@
 /* --- CONTENEUR DES DEUX LOGOS SAP + AI --- */
 .logo-row {
     display: flex;
-    flex-direction: column; /* 📱 MOBILE PAR DÉFAUT */
+    flex-direction: column; /* 📱 MOBILE */
     align-items: center;
     gap: 10px;
     width: 100%;
@@ -75,7 +75,7 @@
     opacity: 0;
 }
 
-/* 💻 ORDINATEUR : logos côte à côte */
+/* 💻 ORDINATEUR : logos côte à côte + LOGO AI PLUS GRAND */
 @media (min-width: 768px) {
     .logo-row {
         flex-direction: row; /* côte à côte */
@@ -83,9 +83,12 @@
         gap: 40px;
     }
 
-    .logo-sap,
+    .logo-sap {
+        width: 300px; /* taille PC */
+    }
+
     .logo-ai {
-        width:200px; /* taille fixe PC */
+        width: 380px; /* 🔥 AGRANDI SUR PC 🔥 */
     }
 }
 
