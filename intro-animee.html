@@ -13,6 +13,16 @@
 .rotate-logo {
     animation: spin 4s linear infinite;
 }
+/* Rotation horizontale du logo IBA Cours */
+.rotate-horizontal {
+    animation: spinX 4s linear infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes spinX {
+    from { transform: rotateX(0deg); }
+    to   { transform: rotateX(360deg); }
+}
 
 @keyframes spin {
     from { transform: rotate(0deg); }
@@ -84,8 +94,9 @@
 
 <div id="intro">
 <img src="Logo IBA COURS.png" 
-     class="intro-title"
-     style="width: 500px; animation: slideDown 1s ease-out, spin 4s linear infinite;">
+     class="intro-title rotate-horizontal" 
+     style="width: 500px; animation: slideDown 1s ease-out, spinX 4s linear infinite;">
+
     <img src="service-a-la-personne.png" class="intro-logo">
 </div>
 
