@@ -14,24 +14,24 @@
     background-color: #f7f3e9;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* IMPORTANT : évite les logos coupés */
+    justify-content: flex-start;
     align-items: center;
-    padding-top: 20px; /* espace haut minimal */
+    padding-top: 10px;
     z-index: 9999;
     perspective: 1200px;
-    overflow-y: auto; /* permet le scroll si nécessaire */
+    overflow: hidden;
 }
 
 /* --- ANIMATION FLIP CARD GÉNÉRIQUE --- */
 .flip-card {
-    width: min(85vw, 420px);   /* plus grand sur mobile */
+    width: min(85vw, 420px);
     height: min(85vw, 420px);
     position: relative;
     transform-style: preserve-3d;
     animation: flipCard 6s ease-in-out forwards;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
     flex-shrink: 0;
-    margin-bottom: 10px; /* espace réduit */
+    margin-bottom: 10px;
 }
 
 /* Faces */
@@ -59,13 +59,45 @@
     100% { transform: rotateY(360deg); }
 }
 
-/* --- LOGO SAP --- */
-.logo-sap {
-    width: min(75vw, 360px); /* plus grand sur mobile */
+/* --- CONTENEUR DES DEUX LOGOS SAP + AI --- */
+.logo-row {
+    display: flex;
+    flex-direction: column; /* mobile */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* 📱 MOBILE : logos en colonne */
+.logo-sap,
+.logo-ai {
+    width: min(75vw, 360px);
     opacity: 0;
-    margin-top: 10px;
+}
+
+/* 💻 ORDI : logos côte à côte */
+@media (min-width: 900px) {
+    .logo-row {
+        flex-direction: row; /* côte à côte */
+        justify-content: center;
+        gap: 40px; /* espace entre les logos */
+    }
+
+    .logo-sap,
+    .logo-ai {
+        width: 300px; /* taille fixe PC */
+    }
+}
+
+/* Animations */
+.logo-sap {
     animation: sapMove 1s ease-out 6s forwards,
                flipCard 6s ease-in-out 6s forwards;
+}
+
+.logo-ai {
+    animation: aiMove 1s ease-out 12s forwards,
+               flipCard 6s ease-in-out 12s forwards;
 }
 
 @keyframes sapMove {
@@ -73,27 +105,9 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* --- LOGO AVANCE IMMÉDIATE --- */
-.logo-ai {
-    width: min(1800vw, 800px); /* PLUS GRAND sur mobile et PC */
-    opacity: 0;
-    margin-top: 10px;
-    animation: aiMove 1s ease-out 12s forwards,
-               flipCard 6s ease-in-out 12s forwards;
-}
-
-
 @keyframes aiMove {
     from { opacity: 0; transform: translateY(40px); }
     to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Texte */
-.intro-subtitle {
-    font-size: min(6vw, 26px);
-    margin-top: 10px;
-    opacity: 0;
-    animation: sapMove 1s ease-out 6s forwards;
 }
 
 </style>
@@ -109,11 +123,11 @@
         <img src="Logo IBA COURS.png" class="face back">
     </div>
 
-    <!-- SAP -->
-    <img src="service-a-la-personne.png" class="logo-sap">
-
-    <!-- AVANCE IMMÉDIATE -->
-    <img src="avance-immediate.png" class="logo-ai">
+    <!-- SAP + AVANCE IMMÉDIATE -->
+    <div class="logo-row">
+        <img src="service-a-la-personne.png" class="logo-sap">
+        <img src="avance-immediate.png" class="logo-ai">
+    </div>
 
 </div>
 
