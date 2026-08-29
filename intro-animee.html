@@ -14,23 +14,24 @@
     background-color: #f7f3e9;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* IMPORTANT : évite les logos coupés */
     align-items: center;
+    padding-top: 20px; /* espace haut minimal */
     z-index: 9999;
     perspective: 1200px;
-    overflow: hidden; /* évite les logos coupés */
+    overflow-y: auto; /* permet le scroll si nécessaire */
 }
 
 /* --- ANIMATION FLIP CARD GÉNÉRIQUE --- */
 .flip-card {
-    width: min(80vw, 420px);   /* plus grand sur mobile */
-    height: min(80vw, 420px);
+    width: min(85vw, 420px);   /* plus grand sur mobile */
+    height: min(85vw, 420px);
     position: relative;
     transform-style: preserve-3d;
     animation: flipCard 6s ease-in-out forwards;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
     flex-shrink: 0;
-    margin-bottom: 5px; /* espace réduit */
+    margin-bottom: 10px; /* espace réduit */
 }
 
 /* Faces */
@@ -60,9 +61,9 @@
 
 /* --- LOGO SAP --- */
 .logo-sap {
-    width: min(70vw, 340px); /* plus grand sur mobile */
+    width: min(75vw, 360px); /* plus grand sur mobile */
     opacity: 0;
-    margin-top: 5px;
+    margin-top: 10px;
     animation: sapMove 1s ease-out 6s forwards,
                flipCard 6s ease-in-out 6s forwards;
 }
@@ -74,9 +75,9 @@
 
 /* --- LOGO AVANCE IMMÉDIATE --- */
 .logo-ai {
-    width: min(70vw, 340px);
+    width: min(75vw, 360px);
     opacity: 0;
-    margin-top: 5px;
+    margin-top: 10px;
     animation: aiMove 1s ease-out 12s forwards,
                flipCard 6s ease-in-out 12s forwards;
 }
@@ -89,7 +90,7 @@
 /* Texte */
 .intro-subtitle {
     font-size: min(6vw, 26px);
-    margin-top: 5px;
+    margin-top: 10px;
     opacity: 0;
     animation: sapMove 1s ease-out 6s forwards;
 }
