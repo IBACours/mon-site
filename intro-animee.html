@@ -57,33 +57,34 @@
 /* --- CONTENEUR DES LOGOS SAP + AI --- */
 .logo-row {
     display: flex;
-    flex-direction: column; /* 📱 MOBILE PAR DÉFAUT */
+    flex-direction: row; /* 💻 PAR DÉFAUT : côte à côte */
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 40px;
     width: 100%;
 }
 
-/* 📱 MOBILE : tailles adaptées */
-.logo-sap,
-.logo-ai {
-    width: min(75vw, 360px);
+/* 💻 PC : tailles */
+.logo-sap {
+    width: 220px; /* SAP petit */
     opacity: 0;
 }
 
-/* 💻 PC : logos côte à côte */
-@media (min-width: 900px) {
+.logo-ai {
+    width: 500px; /* 🔥 AI plus grand sur PC 🔥 */
+    opacity: 0;
+}
+
+/* 📱 MOBILE : logos en colonne */
+@media (max-width: 900px) {
     .logo-row {
-        flex-direction: row; /* côte à côte */
-        justify-content: center;
-        gap: 40px;
+        flex-direction: column; /* en dessous */
+        gap: 10px;
     }
 
-    .logo-sap {
-        width: 220px; /* SAP petit */
-    }
-
+    .logo-sap,
     .logo-ai {
-        width: 500px; /* 🔥 AI PLUS GRAND SUR PC 🔥 */
+        width: min(75vw, 360px);
     }
 }
 
