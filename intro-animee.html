@@ -21,13 +21,13 @@
     perspective: 1200px;
 }
 
-/* --- CONTENEUR 3D AVEC ANIMATION SÉQUENCÉE --- */
+/* --- CONTENEUR 3D AVEC ANIMATION FLIP CARD --- */
 .logo-sequence {
     width: 500px;
     height: 500px;
     position: relative;
     transform-style: preserve-3d;
-    animation: sequenceAnim 14s linear forwards;
+    animation: flipCard 6s ease-in-out forwards;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
     flex-shrink: 0;
 }
@@ -40,9 +40,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    backface-visibility: hidden;
 }
 
-/* Face arrière — INDISPENSABLE */
+/* Face arrière */
 .logo-back {
     width: 100%;
     height: 100%;
@@ -50,18 +51,28 @@
     position: absolute;
     top: 0;
     left: 0;
+    backface-visibility: hidden;
 
-    /* CECI SUPPRIME LE DEUXIÈME LOGO */
-    transform: rotateX(180deg) scaleY(-1);
+    /* verso inversé */
+    transform: rotateY(180deg);
 }
 
-/* Animation séquencée */
-@keyframes sequenceAnim {
-    0%   { transform: rotateX(0deg) rotateY(0deg); }
-    15%  { transform: rotateX(0deg) rotateY(0deg); }
-    40%  { transform: rotateX(1080deg) rotateY(0deg); }
-    70%  { transform: rotateX(1080deg) rotateY(1080deg); }
-    100% { transform: rotateX(0deg) rotateY(0deg); }
+/* Animation Flip Card Premium */
+@keyframes flipCard {
+    0%   { transform: rotateY(0deg); }
+    20%  { transform: rotateY(0deg); }
+
+    /* rotation vers le verso */
+    40%  { transform: rotateY(180deg); }
+
+    /* verso visible */
+    60%  { transform: rotateY(180deg); }
+
+    /* retour vers le recto */
+    80%  { transform: rotateY(360deg); }
+
+    /* stabilisation */
+    100% { transform: rotateY(360deg); }
 }
 
 /* --- LOGO SAP --- */
@@ -71,7 +82,9 @@
     height: auto;
     opacity: 0;
     margin-top: 20px;
-    animation: sapAppear 1.5s ease-out 14s forwards;
+
+    /* apparition après l’animation flip */
+    animation: sapAppear 1.5s ease-out 6s forwards;
 }
 
 @keyframes sapAppear {
@@ -84,7 +97,7 @@
     font-size: 24px;
     margin-top: 10px;
     opacity: 0;
-    animation: sapAppear 1.5s ease-out 14s forwards;
+    animation: sapAppear 1.5s ease-out 6s forwards;
 }
 
 </style>
@@ -94,7 +107,7 @@
 
 <div id="intro">
 
-    <!-- ROTATION SÉQUENCÉE RECTO-VERSO -->
+    <!-- FLIP CARD RECTO-VERSO -->
     <div class="logo-sequence">
         <img src="Logo IBA COURS.png" class="logo-face">
         <img src="Logo IBA COURS.png" class="logo-back">
