@@ -72,20 +72,23 @@
 }
 
 .logo-ai {
-    width: 500px; /* AI plus grand sur PC */
+    width: 500px; /* AI grand sur PC */
     opacity: 0;
 }
 
-/* 📱 MOBILE / TABLET tactile : logos en colonne */
+/* 📱 MOBILE / TABLET tactile : logos en colonne + AI plus grand */
 @media (hover: none) {
     .logo-row {
         flex-direction: column; /* l’un en dessous de l’autre */
         gap: 10px;
     }
 
-    .logo-sap,
+    .logo-sap {
+        width: min(70vw, 320px); /* SAP légèrement réduit sur mobile */
+    }
+
     .logo-ai {
-        width: min(75vw, 360px); /* tailles adaptées mobile */
+        width: min(85vw, 420px); /* 🔥 AI plus grand sur mobile 🔥 */
     }
 }
 
