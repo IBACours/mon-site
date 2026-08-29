@@ -20,9 +20,6 @@
 
     /* Perspective globale */
     perspective: 1200px;
-
-    /* Fondu désactivé pour observer l’animation */
-    /* animation: introFadeOut 2s ease-in-out 3s forwards; */
 }
 
 /* --- CONTENEUR 3D AVEC ANIMATION SÉQUENCÉE --- */
@@ -33,7 +30,7 @@
     transform-style: preserve-3d;
 
     /* Animation séquencée */
-    animation: sequenceAnim 14s ease-in-out forwards;
+    animation: sequenceAnim 14s linear forwards;
 
     /* Ombre réaliste */
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
@@ -48,9 +45,7 @@
 }
 
 /* Face avant */
-.logo-face {
-    transform: rotateX(0deg);
-}
+.logo-face {}
 
 /* Face arrière : retournée pour rester lisible */
 .logo-back {
@@ -81,12 +76,12 @@
     15%  { transform: rotateX(0deg) rotateY(0deg); }
 
     /* 2–6s : 3 rotations horizontales */
-    15%  { transform: rotateX(0deg); }
-    40%  { transform: rotateX(1080deg); } /* 3 × 360° */
+    15%  { transform: rotateX(0deg) rotateY(0deg); }
+    40%  { transform: rotateX(1080deg) rotateY(0deg); }
 
     /* 6–10s : 3 rotations verticales */
-    40%  { transform: rotateY(0deg); }
-    70%  { transform: rotateY(1080deg); } /* 3 × 360° */
+    40%  { transform: rotateX(1080deg) rotateY(0deg); }
+    70%  { transform: rotateX(1080deg) rotateY(1080deg); }
 
     /* 10–14s : retour normal et stop */
     70%  { transform: rotateX(0deg) rotateY(0deg); }
