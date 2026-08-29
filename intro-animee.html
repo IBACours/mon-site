@@ -75,12 +75,13 @@
 
 /* --- LOGO AVANCE IMMÉDIATE --- */
 .logo-ai {
-    width: min(75vw, 360px);
+    width: min(85vw, 420px); /* PLUS GRAND sur mobile et PC */
     opacity: 0;
     margin-top: 10px;
     animation: aiMove 1s ease-out 12s forwards,
                flipCard 6s ease-in-out 12s forwards;
 }
+
 
 @keyframes aiMove {
     from { opacity: 0; transform: translateY(40px); }
