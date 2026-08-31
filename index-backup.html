@@ -1,135 +1,270 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Intro animée</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBA Cours - Sandrine Ibaremborde</title>
 
-<style>
-
-/* PAGE D'INTRO */
-#intro {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: #f7f3e9;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 10px;
-    z-index: 9999;
-    perspective: 1200px;
-    overflow: hidden;
-}
-
-/* --- ANIMATION FLIP CARD --- */
-.flip-card {
-    width: min(85vw, 420px);
-    height: min(85vw, 420px);
-    position: relative;
-    transform-style: preserve-3d;
-    animation: flipCard 6s ease-in-out forwards;
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
-    margin-bottom: 10px;
-}
-
-.face {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-    backface-visibility: hidden;
-}
-
-.back {
-    transform: rotateY(180deg);
-}
-
-@keyframes flipCard {
-    0%   { transform: rotateY(0deg); }
-    40%  { transform: rotateY(180deg); }
-    80%  { transform: rotateY(360deg); }
-    100% { transform: rotateY(360deg); }
-}
-
-/* --- CONTENEUR DES LOGOS SAP + AI --- */
-/* 💻 PC PAR DÉFAUT : côte à côte */
-.logo-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-}
-
-/* 💻 PC : tailles */
-.logo-sap {
-    width: 220px; /* SAP petit */
-    opacity: 0;
-}
-
-.logo-ai {
-    width: 500px; /* AI plus grand sur PC */
-    opacity: 0;
-}
-
-/* 📱 MOBILE / TABLET tactile : logos en colonne */
-@media (hover: none) {
-    .logo-row {
-        flex-direction: column; /* l’un en dessous de l’autre */
-        gap: 10px;
+  <style>
+    body {
+      background-color: #f7f3e9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    .logo-sap,
-    .logo-ai {
-        width: min(75vw, 360px); /* tailles adaptées mobile */
+    .header-logo {
+      width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
-}
 
-/* Animations */
-.logo-sap {
-    animation: sapMove 1s ease-out 6s forwards,
-               flipCard 6s ease-in-out 6s forwards;
-}
+    /* INTRO */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #f7f3e9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: introFadeOut 2s ease-in-out 3s forwards;
+    }
 
-.logo-ai {
-    animation: aiMove 1s ease-out 12s forwards,
-               flipCard 6s ease-in-out 12s forwards;
-}
+    @keyframes introFadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
 
-@keyframes sapMove {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
+    .intro-logo {
+      width: 60%;
+      max-width: 500px;
+      height: auto;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeInLogo 1s ease-out 1s forwards;
+    }
 
-@keyframes aiMove {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
 
-</style>
+    .intro-title {
+      font-size: 48px;
+      font-weight: bold;
+      animation: slideDown 1s ease-out;
+    }
+
+    .intro-subtitle {
+      font-size: 24px;
+      margin-top: 10px;
+      animation: slideUp 1s ease-out 0.5s;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    /* AVANTAGES */
+    .sap-box {
+      background-color: #f8f6ef;
+      border: 1px solid #000;
+      border-radius: 6px;
+      padding: 15px;
+      max-width: 900px;
+      margin: 20px auto 40px auto;
+    }
+
+    .sap-text ul {
+      margin: 0;
+      padding-left: 25px;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      list-style-type: none;
+    }
+
+    .sap-text li {
+      margin-bottom: 12px;
+    }
+
+    .sap-text li::before {
+      content: "✓ ";
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .sap-text a {
+      color: #2c3e50;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* Empêche les logos de déborder sur mobile */
+    .sap-box img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 700px) {
+      .sap-text ul {
+        padding-left: 0;
+        list-style-position: inside;
+      }
+
+      .sap-box img {
+        max-width: 70%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div id="intro">
+  <!-- INTRO -->
+  <div id="intro">
+    <h1 class="intro-title">IBA COURS</h1>
+    <p class="intro-subtitle">" Ta réussite, notre objectif ! "</p>
+    <p class="intro-subtitle">Organisme déclaré</p>
+    <img src="service-a-la-personne.png" class="intro-logo" alt="Service à la Personne">
+  </div>
 
-    <!-- IBA COURS -->
-    <div class="flip-card">
-        <img src="Logo IBA COURS.png" class="face">
-        <img src="Logo IBA COURS.png" class="face back">
+  <!-- LOGO DU HAUT -->
+  <div class="header">
+    <img src="Logo IBA COURS.png" class="header-logo" alt="Logo IBA COURS">
+  </div>
+
+  <!-- CONTENU -->
+  <div class="content">
+
+    <p>Enseignante et formatrice diplômée, je propose un soutien scolaire personnalisé en mathématiques et français pour des élèves de primaire et de collège, ainsi que pour les adultes souhaitant renforcer leurs compétences et préparer des concours.</p>
+
+    <p>✅ <strong>Pédagogie adaptée :</strong> chaque élève est unique. Je m’adapte à son rythme, ses besoins et ses difficultés pour des progrès durables.</p>
+
+    <p>✅ <strong>Suivi personnalisé :</strong> un accompagnement sur mesure, avec des méthodes variées (exercices ciblés, explications claires, astuces mnémotechniques) pour dédramatiser l’apprentissage et redonner confiance.</p>
+
+    <p>✅ <strong>Flexibilité et confort :</strong> des cours à domicile, dans un cadre rassurant, pour un apprentissage serein et efficace.</p>
+
+    <h3>🎁 Avantages</h3>
+
+    <div class="sap-box">
+      <div class="sap-text">
+        <ul>
+
+          <li><strong>Disponibilité :</strong> adaptée à vos contraintes horaires.</li>
+
+          <li><strong>Organisme déclaré :</strong> "Services à la Personne"</li>
+
+          <!-- BLOC DOUBLE AVANTAGES -->
+          <div style="margin-left:22px; margin-top:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
+
+              <!-- Crédit d'impôt -->
+              <div style="flex:1; min-width:280px; margin-right:20px; text-align:center;">
+                <p style="text-align:left;">
+                  Bénéficiez de <strong>50% de crédit d’impôt</strong><br>
+                  Pour plus d'information 
+                  <a href="https://www.servicesalapersonne.gouv.fr" target="_blank">cliquez ici</a>
+                </p>
+
+                <img src="service-a-la-personne.png"
+                     alt="Service à la Personne"
+                     style="height:110px; width:auto; margin-top:8px;">
+              </div>
+
+              <!-- Avance Immédiate -->
+              <div style="flex:1; min-width:280px; text-align:center;">
+                <p style="text-align:left;">
+                  Bénéficiez de <strong>L'Avance Immédiate</strong><br>
+                  Pour plus d'information 
+                  <a href="Avance-Immediate.html">cliquez ici</a>
+                </p>
+
+                <img src="avance-immediate.png"
+                     alt="Avance Immédiate"
+                     style="height:90px; width:auto; margin-top:8px;">
+              </div>
+
+            </div>
+
+          </li>
+
+        </ul>
+      </div>
     </div>
 
-    <!-- SAP + AVANCE IMMÉDIATE -->
-    <div class="logo-row">
-        <img src="service-a-la-personne.png" class="logo-sap">
-        <img src="avance-immediate.png" class="logo-ai">
+    <!-- CONTACT -->
+    <div style="margin-top:30px;">
+      <h2 style="font-size:26px;font-weight:bold;text-decoration:underline;">Contact :</h2>
+
+     <div style="display:flex;align-items:center;gap:15px;margin-top:10px;">
+  <img src="Sandrine.jpg" alt="Sandrine IBAREMBORDE" style="width:100px;height:100px;border-radius:50%;">
+
+  <div style="display:flex;flex-direction:column;justify-content:center;">
+    <span style="font-size:22px;">Sandrine IBAREMBORDE</span>
+
+    <!-- Email avec icône -->
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="font-size:27px;">📧</span>
+      <a href="mailto:iba.cours@gmail.com"
+         style="font-size:18px;font-weight:bold;color:#1E88E5;text-decoration:underline;">
+         iba.cours@gmail.com
+      </a>
     </div>
 
+    <!-- Téléphone avec icône -->
+    <div style="display:flex;align-items:center;gap:8px;margin-top:5px;">
+      <span style="font-size:22px;">📞</span>
+      <a href="tel:0612272995"
+         style="font-size:18px;font-weight:bold;color:black;text-decoration:none;">
+         06 12 27 29 95
+      </a>
+    </div>
+  </div>
 </div>
+
+
+    <p style="text-align:center;font-weight:bold;font-size:1.5em;margin-bottom:10px;">
+      "Parce que la réussite se construit avec patience, écoute et passion."
+    </p>
+
+    <div style="margin-top:20px;text-align:center;">
+      <a href="avis.html" style="margin-right:30px;font-weight:bold;font-size:18px;">Lire les avis</a>
+      <a href="donner-avis.html" style="font-weight:bold;font-size:18px;">Déposer un avis</a>
+    </div>
+
+    <p style="text-align:center;font-size:0.6em;color:black;margin-top:30px;line-height:1;">
+      En cas de litige non résolu, le client peut recourir gratuitement au médiateur de la consommation compétent, à savoir CM2C.<br>
+      Site internet :
+      <a href="https://www.cm2c.net" target="_blank" style="color:#2c3e50;font-weight:bold;">
+        https://www.cm2c.net
+      </a>
+    </p>
+
+  </div>
 
 </body>
 </html>
