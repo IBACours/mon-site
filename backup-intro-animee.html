@@ -22,6 +22,30 @@
     overflow: hidden;
 }
 
+ /* --- LOGO IBA COURS : apparition en fondu --- */
+.logo-iba {
+    width: min(85vw, 420px);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo-iba-img {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    animation: ibaFade 2s ease-out 0.5s forwards;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
+}
+
+@keyframes ibaFade {
+    from { opacity: 0; filter: brightness(1.8); }
+    to   { opacity: 1; filter: brightness(1); }
+}
+   
+    
 /* --- ANIMATION FLIP CARD --- */
 .flip-card {
     width: min(85vw, 420px);
@@ -121,15 +145,14 @@
 <div id="intro">
 
     <!-- IBA COURS -->
-    <div class="flip-card">
-        <img src="Logo IBA COURS.png" class="face">
-        <img src="Logo IBA COURS.png" class="face back">
-    </div>
+   <div class="logo-iba">
+    <img src="Logo IBA COURS.png" class="logo-iba-img">
+</div>
 
     <!-- SAP + AVANCE IMMÉDIATE -->
     <div class="logo-row">
         <img src="service-a-la-personne.png" class="logo-sap">
-        <img src="avance-immediate.png" class="logo-ai">
+        <img src="v-avance-immediate.png" class="logo-ai">
     </div>
 
 </div>
