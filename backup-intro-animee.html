@@ -5,7 +5,20 @@
 <title>Intro animée</title>
 
 <style>
+   
+/* Texte sous IBA COURS */
+.intro-text {
+position: relative;
+font-size: 40px; /* change cette valeur pour régler la taille */
+font-weight: bold;
+color: #333;
+text-align: center;
+line-height: 1.2;
+margin-bottom: 15px;
+z-index: 10000;
+}
 
+    
 /* PAGE D'INTRO */
 #intro {
     position: fixed;
@@ -44,8 +57,7 @@
     from { opacity: 0; filter: brightness(1.8); }
     to   { opacity: 1; filter: brightness(1); }
 }
-   
-    
+     
 /* --- ANIMATION FLIP CARD --- */
 .flip-card {
     width: min(85vw, 420px);
@@ -144,17 +156,19 @@
 
 <div id="intro">
 
-    <!-- IBA COURS -->
-   <div class="logo-iba">
-    <img src="Logo IBA COURS.png" class="logo-iba-img">
+<!-- IBA COURS -->
+<div class="logo-iba">
+<img src="Logo IBA COURS.png" class="logo-iba-img">
 </div>
-
-    <!-- SAP + AVANCE IMMÉDIATE -->
-    <div class="logo-row">
-        <img src="service-a-la-personne.png" class="logo-sap">
-        <img src="v-avance-immediate.png" class="logo-ai">
-    </div>
-
+ 
+<div class="intro-text">
+NOUS SOMMES
+</div>
+ 
+<!-- SAP + AVANCE IMMÉDIATE -->
+<div class="logo-row">
+<img src="service-a-la-personne.png" class="logo-sap">
+<img src="l-avance-immediate.png" class="logo-ai">
 </div>
 
 </body>
