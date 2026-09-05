@@ -5,7 +5,13 @@
 <title>Intro animée</title>
 
 <style>
-
+html, body {
+margin: 0;
+padding: 0;
+overflow: hidden;
+scroll-behavior: auto;
+}
+   
 /* PAGE D'INTRO */
 #intro {
     position: fixed;
@@ -139,8 +145,11 @@
 
 </style>
 </head>
+*body 
+    onload="window.scrollTo(0,0)"*
+    
+<div id="intro*>
 
-<body>
 
 <div id="intro">
 
