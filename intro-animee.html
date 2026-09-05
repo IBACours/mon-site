@@ -32,9 +32,16 @@ z-index: 10000;
     padding-top: 10px;
     z-index: 9999;
     perspective: 1200px;
-    overflow: hidden;
+   overflow-y: auto;
+   overflow-x: hidden;   
 }
 
+@media (hover: hover) and (pointer: fine) {
+#intro {
+overflow-y: scroll;
+}
+}
+   
  /* --- LOGO IBA COURS : apparition en fondu --- */
 .logo-iba {
     width: min(85vw, 420px);
