@@ -63,7 +63,45 @@ overflow-y: scroll;
     animation: ibaFade 2s ease-out 0.5s forwards;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.35));
 }
+/* Bouton Passer l'intro */
+.skip-intro {
+position: absolute;
+left: calc(100% + 30px);
+top: 50%;
+transform: translateY(-50%);
+ 
+background: #002B5C;
+color: white;
+border: none;
+padding: 12px 20px;
+border-radius: 8px;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+z-index: 10001;
+white-space: nowrap;
 
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+ 
+.skip-intro:hover {
+background: #001D3D;
+}
+ 
+/* Mobile */
+@media (max-width: 768px) {
+.skip-intro {
+position: static;
+transform: none;
+margin-top: 15px;
+}
+
+.logo-iba {
+
+flex-direction: column;
+36
+}
+}
 @keyframes ibaFade {
     from { opacity: 0; filter: brightness(1.8); }
     to   { opacity: 1; filter: brightness(1); }
