@@ -2,136 +2,179 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>IBA Cours</title>
+<title>Intro IBA Cours</title>
 
 <style>
- 
+
 body{
-margin:0;
-background:#f7f3e9;
-overflow:hidden;
-font-family:Arial,sans-serif;
+    margin:0;
+    background:#f7f3e9;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
 }
- 
+
 #intro{
-width:100vw;
-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
- 
-/* Texte du haut */
+
+/* Texte */
 .intro-text{
-margin-top:20px;
-font-size:60px;
-font-weight:bold;
-color:#333;
+    margin-top:20px;
+    font-size:60px;
+    font-weight:bold;
+    color:#333;
 }
- 
+
 /* Logo IBA */
 .logo-iba{
-width:400px;
-opacity:0;
-animation:fadeIn 2s forwards;
+    width:min(80vw,400px);
+    opacity:0;
+    animation:fadeIn 2s ease forwards;
 }
- 
+
 @keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+    from{opacity:0;}
+    to{opacity:1;}
 }
- 
-/* Zone cercle */
+
+/* Zone centrale */
 .orbit-container{
-position:relative;
-width:600px;
-height:600px;
-margin-top:20px;
+    position:relative;
+    width:600px;
+    height:600px;
+    margin-top:20px;
 }
- 
-/* Centre */
-.bayonne{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:40px;
-font-weight:bold;
-color:#002B5C;
-text-align:center;
+
+/* Photo Bayonne */
+.center-photo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    overflow:hidden;
+    border:6px solid white;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+    z-index:10;
 }
- 
-/* Cercle qui tourne */
+
+.center-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Cercle tournant */
 .orbit{
-position:absolute;
-width:100%;
-height:100%;
-animation:rotate 20s linear infinite;
+    position:absolute;
+    width:100%;
+    height:100%;
+    animation:rotateOrbit 20s linear infinite;
 }
- 
-@keyframes rotate{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
+
+@keyframes rotateOrbit{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
 }
- 
+
 /* Logos */
 .logo{
-position:absolute;
-width:160px;
+    position:absolute;
+    width:160px;
+    height:auto;
 }
- 
-/* Positions */
+
+/* Positions autour du cercle */
 .sap{
-top:0;
-left:50%;
-transform:translateX(-50%);
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
 }
- 
+
 .ai{
-bottom:40px;
-left:0;
+    bottom:50px;
+    left:20px;
 }
- 
-.formateur{
-bottom:40px;
-right:0;
+
+.femme{
+    bottom:50px;
+    right:20px;
 }
- 
+
+/* Mobile */
+@media(max-width:768px){
+
+    .intro-text{
+        font-size:40px;
+    }
+
+    .orbit-container{
+        width:350px;
+        height:350px;
+    }
+
+    .center-photo{
+        width:140px;
+        height:140px;
+    }
+
+    .logo{
+        width:100px;
+    }
+
+    .ai{
+        bottom:20px;
+    }
+
+    .femme{
+        bottom:20px;
+    }
+}
+
 </style>
 </head>
- 
+
 <body>
- 
+
 <div id="intro">
- 
-<div class="intro-text">
-Je suis
+
+    <div class="intro-text">
+        Je suis
+    </div>
+
+    Logo IBA COURS.png
+
+    <div class="orbit-container">
+
+        <div class="center-photo">
+            bayonne.jpg
+        </div>
+
+        <div class="orbit">
+
+            <img src="service-a-la-personne.png"
+                 class="logo sap">
+
+            <img src="l-avance-immediate.png"
+                 class="logo ai">
+
+            <img src="l-avance-immediate.png">
+
+        </div>
+
+    </div>
+
 </div>
 
-Logo IBA COURS.png
- 
-<div class="orbit-container">
- 
-<div class="bayonne">
-⚓<br>
-BAYONNE
-</div>
- 
-<div class="orbit">
- 
-<img src="service-a-la-personne.png"
-class="logo sap">
- 
-<img src="l-avance-immediate.png"
-class="logo ai">
- 
-<img src="l-avance-immediate.png">
- 
-</div>
-
-</div>
- 
-</div>
- 
 </body>
 </html>
